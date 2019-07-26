@@ -1,0 +1,25 @@
+
+
+Профилей системы
+select d.nuni, a.text, b.text, c.text, d.text from  sysprof a left join sysprof b on b.npar = a.nuni left join sysprof c on c.npar = b.nuni
+left join sysprof d on d.npar = c.nuni where a.nlev = 1 and b.text like 'K%' order by a.text, b.text
+
+Фурнитура
+select  a.nuni, b.funic,  b.* from  syspros a left join
+furnlst b on a.funic = b.funic where a.nuni = 54 and b.ftype = 0 order by b.fname
+
+Поиск nuni
+select distinct a.nuni,  a.funic,  b.fname from syspros a,  furnlst b where a.funic = b.funic and a.nuni = 87 and b.fname like '%окна/двери%'
+
+Испоьзование параметров пользователя
+select  a.pnumb || '- pargrup'  from  pargrup a  where a.pnumb = -862071
+union
+select a.pnumb || '- parglas'  from parglas a where a.pnumb = -862071
+union
+select a.pnumb || '- parvstm'  from parvstm a where a.pnumb = -862071
+union
+select a.pnumb || '- parvsts'  from parvsts a where a.pnumb = -862071
+union
+select a.pnumb || '- parfurl'  from parfurl a where a.pnumb = -862071
+union
+select a.pnumb || '- parfurs'  from parfurs a where a.pnumb = -862071
