@@ -1,5 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: api.IwinIntegration
-Implementation-Vendor: Bimax
-Implementation-Title: i-Okna IwinCalc2 module
-Implementation-Version: 1.0.0.327
+Main-Class: model.Main
+
