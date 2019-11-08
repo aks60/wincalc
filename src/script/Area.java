@@ -3,8 +3,6 @@ package script;
 import com.google.gson.Gson;
 import enums.LayoutArea;
 import enums.TypeElem;
-
-import javax.annotation.Nullable;
 import java.util.LinkedList;
 
 /**
@@ -149,7 +147,7 @@ public class Area extends Element {
      * @param nuni профиля
      * @param prj  проект
      */
-    public void setParam(int nuni, @Nullable String prj) {
+    public void setParam(int nuni, String prj) {
         this.nuni = nuni;
         this.prj = prj;
     }

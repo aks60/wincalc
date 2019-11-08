@@ -108,7 +108,7 @@ public class Constructive {
             constructive = constructivesMap.get(regionId);
             if (constructive == null) {
                 try (Connection conn = java.sql.DriverManager.getConnection(
-                        "jdbc:firebirdsql:localhost/3050:E:\\Okna\\Profstroy\\ITEST.FDB?encoding=win1251", "sysdba", "masterkey")) {
+                        "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Profstroy\\ITEST.FDB?encoding=win1251", "sysdba", "masterkey")) {
                     constructive = new Constructive(regionId, conn);
                 }
                  constructivesMap.put(regionId, constructive);

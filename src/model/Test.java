@@ -10,7 +10,7 @@ public class Test {
      */
     public static void main(String[] args) {
         try {
-            String _case = "dll";
+            String _case = "min";
             System.out.println("Тестирование - " + _case);
             IWindows.production = false;
             IWindows iwin = new IWindows(Constructive.getOrLoadConstructive((short) 177));

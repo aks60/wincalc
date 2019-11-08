@@ -8,7 +8,6 @@ import enums.MeasUnit;
 import enums.TypeArtikl;
 import model.ElemBase;
 
-import javax.annotation.Nullable;
 import java.io.*;
 import java.util.*;
 
@@ -150,7 +149,7 @@ public class Specification {
         hmParam.put(key, val);
     }
 
-    public String getHmParam(@Nullable Object def, int... p) {
+    public String getHmParam(Object def, int... p) {
 
         if (hmParam == null) System.out.println("ОШИБКА getHmParam() hmParamJson = null");
 

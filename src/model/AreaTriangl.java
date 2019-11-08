@@ -3,7 +3,6 @@ package model;
 import enums.TypeElem;
 import enums.LayoutArea;
 
-import javax.annotation.Nullable;
 
 /**
  * Является родителем для всех элементов образуюших треугольное окно

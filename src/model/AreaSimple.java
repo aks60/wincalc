@@ -9,7 +9,6 @@ import enums.TypeProfile;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 
-import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -54,7 +53,7 @@ public class AreaSimple extends ElemBase {
     /**
      * Конструктор root окна
      */
-    public AreaSimple(@Nullable AreaSimple owner, String id, LayoutArea layout, float width, float height, int colorBase, int colorInternal, int colorExternal) {
+    public AreaSimple(AreaSimple owner, String id, LayoutArea layout, float width, float height, int colorBase, int colorInternal, int colorExternal) {
         super(id);
         this.owner = owner;
         this.layout = layout;
@@ -271,7 +270,7 @@ public class AreaSimple extends ElemBase {
      * @param <E>  Тип возвращаемого элемента
      * @return Список элементов в контейнере
      */
-    public <E> LinkedList<E> getElemList(@Nullable TypeElem... type) {
+    public <E> LinkedList<E> getElemList(TypeElem... type) {
         if (type == null) type = new TypeElem[]{TypeElem.FRAME, TypeElem.IMPOST, TypeElem.GLASS, TypeElem.STVORKA};
         LinkedList<ElemBase> arrElem = new LinkedList();
         LinkedList<E> outElem = new LinkedList();

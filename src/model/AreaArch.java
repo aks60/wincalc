@@ -5,7 +5,6 @@ import domain.Sysproa;
 import enums.LayoutArea;
 import enums.TypeElem;
 
-import javax.annotation.Nullable;
 
 /**
  * Является родителем для всех элементов образуюших арку.

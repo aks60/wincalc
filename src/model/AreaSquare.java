@@ -5,7 +5,6 @@ import enums.LayoutArea;
 import enums.TypeElem;
 import javafx.scene.canvas.GraphicsContext;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
