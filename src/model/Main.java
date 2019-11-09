@@ -44,7 +44,7 @@ public class Main extends javax.swing.JFrame {
                 try {
                     IWindows.production = false;
 
-                    IWindows iwin = new IWindows(Constructive.getOrLoadConstructive((short) 177));
+                    IWindows iwin = new IWindows(Constructive.getConstructive((short) 177));
 
 
                     frame.rootArea = iwin.create(iwin.productParamsJson);

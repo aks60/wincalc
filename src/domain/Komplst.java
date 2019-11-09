@@ -17,14 +17,6 @@ public class Komplst {
     public int clnum;//текстура скатанного или ламинированного артикула
     public short khide;//флаг "Скрыт". Устанавливается для запрета использования комплекта
     public String kpref;//категория
-    /*public float aqtyk;
-    public String kpict;
-    public String kgrup;
-    public short xdepa;
-    public float kdiff;
-    public short pnump;
-    public short gnumb;
-    public String ksize;*/
 
     public Komplst() {
     }
@@ -40,14 +32,6 @@ public class Komplst {
         clnum = rs.getInt("CLNUM");
         khide = rs.getShort("KHIDE");
         kpref = rs.getString("KPREF");
-        //aqtyk = rs.getFloat("AQTYK");
-        //kpict = rs.getString("KPICT");
-        //kgrup = rs.getString("KGRUP");
-        //xdepa = rs.getShort("XDEPA");
-        //kdiff = rs.getFloat("KDIFF");
-        //pnump = rs.getShort("PNUMP");
-        //gnumb = rs.getShort("GNUMB");
-        //ksize = rs.getString("KSIZE");
     }
 
     public static ArrayList<Komplst> find(Constructive constructive, String anumb) {

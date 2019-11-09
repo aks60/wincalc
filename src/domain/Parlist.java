@@ -13,10 +13,6 @@ public class Parlist {
     public String pname;//название параметра или его значения
     public int pnumb;//номер параметра
     public int znumb;//номер параметра или значения
-    public short ptypf;//Тип параметра
-    public String pmacr;
-    public short xdepa;
-    public String psize;
 
     public Parlist() {
     }
@@ -27,10 +23,6 @@ public class Parlist {
         pname = rs.getString("PNAME");
         pnumb = rs.getInt("PNUMB");
         znumb = rs.getInt("ZNUMB");
-        ptypf = rs.getShort("PTYPF");
-        pmacr = rs.getString("PMACR");
-        xdepa = rs.getShort("XDEPA");
-        psize = rs.getString("PSIZE");
     }
 
     public static Parlist get(Constructive constructive, long pnumb, long znumb) {

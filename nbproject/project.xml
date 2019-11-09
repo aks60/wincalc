@@ -5,7 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>wincalc</name>
             <source-roots>
-                <root id="src.dir"/>
+                <root id="src.dir" name="Packages"/>
             </source-roots>
             <test-roots/>
         </data>

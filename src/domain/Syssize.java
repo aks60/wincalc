@@ -13,7 +13,6 @@ public class Syssize {
     public int sunic;//ID системы
     public String sname;//Система артикулов
     public float ssizp;//Припуск на сварку
-    public float ssizn;//Наплав системы
     public float ssizf;//Нахлест створки
     public float ssizi;//Заход импоста
 
@@ -25,7 +24,6 @@ public class Syssize {
         sunic = rs.getInt("SUNIC");
         sname = rs.getString("SNAME");
         ssizp = rs.getFloat("SSIZP");
-        ssizn = rs.getFloat("SSIZN");
         ssizf = rs.getFloat("SSIZF");
         ssizi = rs.getFloat("SSIZI");
     }

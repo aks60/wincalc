@@ -9,6 +9,7 @@ public class Constructive {
     public final short regionId = 177;
     public static final HashMap<Short, Constructive> constructivesMap = new HashMap<>();
     public static boolean fromPS = true;  // Признак, что конструктив из ПС-4, а не из i-окон.
+    public static boolean fromPS3 = false;  // Признак, что конструктив из ПС-3, а не из PS4.
 
     public final HashMap<Object, Sysprof> sysprofMap = new HashMap();
     public final HashMap<Object, Sysdata> sysdataMap = new HashMap();
@@ -101,17 +102,20 @@ public class Constructive {
         }
     }
 
-    public static Constructive getOrLoadConstructive(short regionId) throws Exception {
+    public static Constructive getConstructive(short regionId) throws Exception {
 
         Constructive constructive;
         synchronized (constructivesMap) {
             constructive = constructivesMap.get(regionId);
             if (constructive == null) {
-                try (Connection conn = java.sql.DriverManager.getConnection(
-                        "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Profstroy\\ITEST.FDB?encoding=win1251", "sysdba", "masterkey")) {
+
+                String url = (fromPS3 == true) ? "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Database\\Sialbase2\\base2.GDB?encoding=win1251"
+                        : "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Database\\Profstroy4\\ITEST.FDB?encoding=win1251";
+
+                try (Connection conn = java.sql.DriverManager.getConnection(url, "sysdba", "masterkey")) {
                     constructive = new Constructive(regionId, conn);
                 }
-                 constructivesMap.put(regionId, constructive);
+                constructivesMap.put(regionId, constructive);
             }
         }
         return constructive;

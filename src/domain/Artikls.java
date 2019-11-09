@@ -32,8 +32,8 @@ public class Artikls {
     public float akoef;//ценовой коэффицент
     public float aouts;//% отхода
     public int sunic;//ID системы (см. табл. SYSSIZE)
-    public short imain;
-    public int cnumt;
+    public short imain; //
+    public int cnumt;  //
 
     public Artikls() {
     }

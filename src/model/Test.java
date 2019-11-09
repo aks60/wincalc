@@ -10,10 +10,13 @@ public class Test {
      */
     public static void main(String[] args) {
         try {
+            //Object obj = Constructive.getConstructive((short) 177);
+            //System.out.println("Test.main()");
+            
             String _case = "min";
             System.out.println("Тестирование - " + _case);
             IWindows.production = false;
-            IWindows iwin = new IWindows(Constructive.getOrLoadConstructive((short) 177));
+            IWindows iwin = new IWindows(Constructive.getConstructive((short) 177));
             if (_case.equals("dll")) {
 
                 iwin.create(Area.test(604008));

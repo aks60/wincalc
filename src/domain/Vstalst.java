@@ -18,6 +18,9 @@ public class Vstalst {
     public short vsets;//установка обязательности
     public String vlets;//для серии (из ARTIKLS.ASERI)
 
+    private static int indexField = 0;
+    private boolean ps3 = true;
+
     public Vstalst() {
     }
 
@@ -27,7 +30,11 @@ public class Vstalst {
         vname = rs.getString("VNAME");
         vnumb = rs.getInt("VNUMB");
         atypm = rs.getShort("ATYPM");
-        vtype = rs.getShort("VTYPE");
+        if (Constructive.fromPS3 == false) {
+            vtype = rs.getShort("VTYPE");
+        } else {
+            vtype = 1;
+        }
         vsets = rs.getShort("VSETS");
         vlets = rs.getString("VLETS");
     }
@@ -48,7 +55,7 @@ public class Vstalst {
         ArrayList<Vstalst> recordList = new ArrayList();
         for (Vstalst record : constructive.vstalstList) {
             if (anumb.equals(record.anumb) && record.vsets > 0) {  //&& record.anumb.charAt(0) != '@') {
-                    recordList.add(record);
+                recordList.add(record);
             }
         }
         return recordList;
@@ -74,7 +81,6 @@ public class Vstalst {
         }
         return null;
     }*/
-
     public static void load(Constructive constructive, Statement stmt) throws SQLException {
         String sql = constructive.fromPS ? "select * from VSTALST" : "select * from PRO4_VSTALST where REGION_ID=" + constructive.regionId;
         try (ResultSet rs = stmt.executeQuery(sql)) {

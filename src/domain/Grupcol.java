@@ -13,8 +13,6 @@ public class Grupcol {
     public String gname;//название группы
     public int gunic;
     public float gkoef;//ценовой коэффицент
-    public float gprc1;//ценовой коэффицент
-    public float gprc2;//ценовой коэффицент
 
     public Grupcol() {
     }
@@ -25,8 +23,6 @@ public class Grupcol {
         gname = rs.getString("GNAME");
         gunic = rs.getInt("GUNIC");
         gkoef = rs.getFloat("GKOEF");
-        gprc1 = rs.getFloat("GPRC1");
-        gprc2 = rs.getFloat("GPRC2");
     }
 
     public static Grupcol get(Constructive constructive, int gnumb) {

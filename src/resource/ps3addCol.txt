@@ -1,0 +1,17 @@
+ Добавлены колотки в ПрофСтрой-3
+ 
+Artikls
+ amain
+ atech
+ asizn
+ sunic
+ imain
+ cnumt
+Artsvst
+ cways
+Syssize - добавил таблицу
+Connlst - добавил таблицу
+Connvar
+ cmirr
+Vstalst
+ vtype - сменили тип 
