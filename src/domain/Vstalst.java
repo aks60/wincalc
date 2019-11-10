@@ -14,7 +14,7 @@ public class Vstalst {
     public String vname;//наименование состава
     public int vnumb;//ИД состава
     public short atypm;//тип артикула
-    public short vtype;//тип состава
+    public short vtype;//тип состава (1 - внутренний, 5 - состав_С/П)
     public short vsets;//установка обязательности
     public String vlets;//для серии (из ARTIKLS.ASERI)
 

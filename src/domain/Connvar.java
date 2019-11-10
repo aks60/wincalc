@@ -15,7 +15,6 @@ public class Connvar {
     public short cprio;//приоритет
     public short ctype;//тип варианта
     public short cnext;//
-    public short cmirr;//1 - использовать зеркально, 0 - нельзя использовать зеркально
     public String cname;//название варианта
 
     public Connvar() {
@@ -28,7 +27,6 @@ public class Connvar {
         cprio = rs.getShort("CPRIO");
         ctype = rs.getShort("CTYPE");
         cnext = rs.getShort("CNEXT");
-        cmirr = rs.getShort("CMIRR");
         cname = rs.getString("CNAME");
     }
 

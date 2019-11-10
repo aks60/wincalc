@@ -32,8 +32,7 @@ public class Artikls {
     public float akoef;//ценовой коэффицент
     public float aouts;//% отхода
     public int sunic;//ID системы (см. табл. SYSSIZE)
-    public short imain; //
-    public int cnumt;  //
+    public int cnumt;//кросс-курс валюты для неосновных текстур (внутренняя, внешняя, двухсторонняя)
 
     public Artikls() {
     }
@@ -60,7 +59,6 @@ public class Artikls {
         akoef = rs.getFloat("AKOEF");
         aouts = rs.getFloat("AOUTS");
         sunic = rs.getInt("SUNIC");
-        imain = rs.getShort("IMAIN");
         cnumt = rs.getInt("CNUMT");
     }
 
