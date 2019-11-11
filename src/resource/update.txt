@@ -9,6 +9,21 @@ Artikls //материальные цености
 Artsvst //тариф. мат. цености
   cways //галочки по приоритетности текстур (основной, внутренней, внешней):
 Syssize - добавил таблицу //системные константы
-Connlst - добавил таблицу //соединения
+CONNECT - изменил название на CONNLST //соединения
 Vstalst //составы
   vtype - сменили тип //тип состава (1 - внутренний, 5 - состав_С/П)
+
+  SCRIPT
+
+
+CREATE TABLE CONNLST (
+    CPREF  VARCHAR(25) NOT NULL,
+    ANUM1  VARCHAR(25) NOT NULL,
+    ANUM2  VARCHAR(25) NOT NULL,
+    CCONN  INTEGER NOT NULL,
+    CNAME  VARCHAR(64),
+    CVARF  SMALLINT,
+    CEQUV  VARCHAR(25)
+);
+
+INSERT INTO connlst SELECT * FROM connect;

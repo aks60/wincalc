@@ -44,15 +44,16 @@ public class Connlst {
     public static Connlst find(Constructive constructive, String cequv) {
 
         for (Connlst record : constructive.connlstList) {
-                if (cequv.equals(record.cequv) && (record.cvarf & 0x100) != 0) {
-                    return record;
-                }
+            if (cequv.equals(record.cequv) && (record.cvarf & 0x100) != 0) {
+                return record;
+            }
         }
         return new Connlst();
     }
 
     public static void load(Constructive constructive, Statement stmt) throws SQLException {
-        String sql = constructive.fromPS ? "select * from CONNLST" : "select * from PRO4_CONNLST where REGION_ID=" + constructive.regionId;
+        String table = (constructive.fromPS3 == true) ? "CONNECT" : "CONNLST";
+        String sql = constructive.fromPS ? "select * from " + table : "select * from PRO4_CONNLST where REGION_ID=" + constructive.regionId;
         try (ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Connlst item = new Connlst(rs);

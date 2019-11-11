@@ -10,17 +10,16 @@ public class Test {
      */
     public static void main(String[] args) {
         try {
-            //Object obj = Constructive.getConstructive((short) 177);
-            //System.out.println("Test.main()");
-            
-            String _case = "min";
-            System.out.println("Тестирование - " + _case);
+            String _case = "con";            
             IWindows.production = false;
             IWindows iwin = new IWindows(Constructive.getConstructive((short) 177));
-            if (_case.equals("dll")) {
-
+            if (_case.equals("con")) {                
+                Constructive.getConstructive((short) 177);
+                
+            } else if (_case.equals("dll")) {
                 iwin.create(Area.test(604008));
                 System.out.println();
+                
             } else {
                 if (_case.equals("min")) {
                     iwin.create(Area.test(601001));
@@ -50,6 +49,7 @@ public class Test {
                     iwin.create(Area.test(604010));
                 }
             }
+            System.out.println("Тестирование <" + _case + "> завершено!");
         } catch (Exception e) {
             System.out.println("Test.main() " + e);
         }
