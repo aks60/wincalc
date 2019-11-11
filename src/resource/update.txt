@@ -1,5 +1,4 @@
- Добавлены таблицы и колотки в ПрофСтрой-3
- 
+==Добавлены таблицы и колотки в ПрофСтрой-3== 
 Artikls //материальные цености
   amain //артикул аналога
   atech //технологический код контейнера
@@ -9,13 +8,11 @@ Artikls //материальные цености
 Artsvst //тариф. мат. цености
   cways //галочки по приоритетности текстур (основной, внутренней, внешней):
 Syssize - добавил таблицу //системные константы
-CONNECT - изменил название на CONNLST //соединения
+connlst - добавил таблицу //соединения
 Vstalst //составы
   vtype - сменили тип //тип состава (1 - внутренний, 5 - состав_С/П)
 
-  SCRIPT
-
-
+==SCRIPT==
 CREATE TABLE CONNLST (
     CPREF  VARCHAR(25) NOT NULL,
     ANUM1  VARCHAR(25) NOT NULL,
@@ -25,5 +22,5 @@ CREATE TABLE CONNLST (
     CVARF  SMALLINT,
     CEQUV  VARCHAR(25)
 );
-
 INSERT INTO connlst SELECT * FROM connect;
+ВНИМАНИЕ!  При изменении в CONNECT триггер должен изменить CONNLST

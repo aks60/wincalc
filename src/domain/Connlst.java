@@ -52,8 +52,7 @@ public class Connlst {
     }
 
     public static void load(Constructive constructive, Statement stmt) throws SQLException {
-        String table = (constructive.fromPS3 == true) ? "CONNECT" : "CONNLST";
-        String sql = constructive.fromPS ? "select * from " + table : "select * from PRO4_CONNLST where REGION_ID=" + constructive.regionId;
+        String sql = constructive.fromPS ? "select * from CONNLST" : "select * from PRO4_CONNLST where REGION_ID=" + constructive.regionId;
         try (ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Connlst item = new Connlst(rs);
