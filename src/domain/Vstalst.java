@@ -18,9 +18,6 @@ public class Vstalst {
     public short vsets;//установка обязательности
     public String vlets;//для серии (из ARTIKLS.ASERI)
 
-    private static int indexField = 0;
-    private boolean ps3 = true;
-
     public Vstalst() {
     }
 
