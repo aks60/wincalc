@@ -9,7 +9,7 @@ public class Constructive {
     public final short regionId = 177;
     public static final HashMap<Short, Constructive> constructivesMap = new HashMap<>();
     public static boolean fromPS = true;  // Признак, что конструктив из ПС-4, а не из i-окон.
-    public static boolean fromPS3 = true;  // Признак, что конструктив из ПС-3, а не из PS4.
+    public static boolean fromPS3 = false;  // Признак, что конструктив из ПС-3, а не из PS4.
 
     public final HashMap<Object, Sysprof> sysprofMap = new HashMap();
     public final HashMap<Object, Sysdata> sysdataMap = new HashMap();
