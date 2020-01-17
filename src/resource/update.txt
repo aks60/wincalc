@@ -8,11 +8,30 @@ Artikls //материальные цености
 Artsvst //тариф. мат. цености
   cways //галочки по приоритетности текстур (основной, внутренней, внешней):
 Syssize - добавил таблицу //системные константы
-connlst - добавил таблицу //соединения
+Connlst - добавил таблицу //соединения
 Vstalst //составы
   vtype - сменили тип //тип состава (1 - внутренний, 5 - состав_С/П)
 
 ==SCRIPT==
+ALTER TABLE ARTIKLS
+ADD AMAIN SMALLINT,
+ADD ATECH VARCHAR(64),
+ADD ASIZN DOUBLE PRECISION,
+ADD SUNIC INTEGER,
+ADD CNUMT INTEGER;
+
+ALTER TABLE ARTSVST
+ADD CWAYS SMALLINT;
+
+CREATE TABLE SYSSIZE (
+    SUNIC  INTEGER,
+    SNAME  VARCHAR(32),
+    SSIZP  DOUBLE PRECISION,
+    SSIZN  DOUBLE PRECISION,
+    SSIZF  DOUBLE PRECISION,
+    SSIZI  DOUBLE PRECISION
+);
+
 CREATE TABLE CONNLST (
     CPREF  VARCHAR(25) NOT NULL,
     ANUM1  VARCHAR(25) NOT NULL,

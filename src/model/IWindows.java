@@ -80,7 +80,7 @@ public class IWindows {
         LinkedList<AreaSimple> areaList = rootArea.getElemList(TypeElem.AREA); //список контейнеров
         LinkedList<AreaStvorka> stvorkaList = rootArea.getElemList(TypeElem.FULLSTVORKA); //список створок
         EnumMap<LayoutArea, ElemFrame> hmElemRama = rootArea.hmElemFrame; //список рам
-        HashMap<String, ElemJoinig> hmJoinElem = rootArea.getHmJoinElem(); //список соединений
+        
         CalcConstructiv constructiv = new CalcConstructiv(mainArea); //конструктив
         CalcTariffication tariffic = new CalcTariffication(mainArea); //класс тарификации
 

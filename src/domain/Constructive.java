@@ -1,6 +1,7 @@
 package domain;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -102,6 +103,20 @@ public class Constructive {
         }
     }
 
+    public static Connection connection() {
+
+        String url = (fromPS3 == true) ? "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Database\\Sialbase2\\base2.GDB?encoding=win1251"
+                : "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Database\\Profstroy4\\ITEST.FDB?encoding=win1251";
+        Connection conn;
+        try {
+            conn = java.sql.DriverManager.getConnection(url, "sysdba", "masterkey");
+            return conn;
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        return null;
+    }
+
     public static Constructive getConstructive(short regionId) throws Exception {
 
         Constructive constructive;
@@ -109,12 +124,8 @@ public class Constructive {
             constructive = constructivesMap.get(regionId);
             if (constructive == null) {
 
-                String url = (fromPS3 == true) ? "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Database\\Sialbase2\\base2.GDB?encoding=win1251"
-                        : "jdbc:firebirdsql:localhost/3050:D:\\Okna\\Database\\Profstroy4\\ITEST.FDB?encoding=win1251";
-
-                try (Connection conn = java.sql.DriverManager.getConnection(url, "sysdba", "masterkey")) {
-                    constructive = new Constructive(regionId, conn);
-                }
+                Connection conn = connection();
+                constructive = new Constructive(regionId, conn);
                 constructivesMap.put(regionId, constructive);
             }
         }
