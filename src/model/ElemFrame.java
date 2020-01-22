@@ -225,7 +225,7 @@ public class ElemFrame extends ElemBase {
 
     @Override
     public TypeElem getTypeElem() {
-        return (TypeElem.FULLSTVORKA == owner.getTypeElem()) ? TypeElem.STVORKA : TypeElem.FRAME;
+        return (TypeElem.FULLSTVORKA == owner.getTypeElem()) ? TypeElem.FRAME_STV : TypeElem.FRAME_BOX;
     }
 
     @Override

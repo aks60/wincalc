@@ -177,7 +177,7 @@ public class IWindows {
             for (Object elementRama : (JSONArray) mainObj.get("elements")) {
                 JSONObject elemRama = (JSONObject) elementRama;
 
-                if (TypeElem.FRAME.name().equals(elemRama.get("elemType"))) {
+                if (TypeElem.FRAME_BOX.name().equals(elemRama.get("elemType"))) {
 
                     if (LayoutArea.LEFT.name().equals(elemRama.get("layoutRama"))) {
                         ElemFrame ramaLeft = rootArea.addRama(new ElemFrame(rootArea, elemRama.get("id").toString(), LayoutArea.LEFT));

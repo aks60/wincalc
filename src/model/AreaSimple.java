@@ -271,7 +271,7 @@ public class AreaSimple extends ElemBase {
      * @return Список элементов в контейнере
      */
     public <E> LinkedList<E> getElemList(TypeElem... type) {
-        if (type == null) type = new TypeElem[]{TypeElem.FRAME, TypeElem.STVORKA, TypeElem.IMPOST, TypeElem.GLASS};
+        if (type == null) type = new TypeElem[]{TypeElem.FRAME_BOX, TypeElem.FRAME_STV, TypeElem.IMPOST, TypeElem.GLASS};
         LinkedList<ElemBase> arrElem = new LinkedList();
         LinkedList<E> outElem = new LinkedList();
         for (Map.Entry<LayoutArea, ElemFrame> elemRama : getRoot().getHmElemFrame().entrySet()) {

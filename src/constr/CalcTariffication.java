@@ -79,7 +79,7 @@ public class CalcTariffication extends CalcBase {
                     } else if (ruleclkRec.riskl == PAR12 && TypeElem.ARCH == type) {//не прямоугольное заполнение с арками
                         checkRuleColor(ruleclkRec, specifElemRec);
                     }
-                } else if (ruleclkRec.riskl == PAR4 && TypeElem.FRAME == type && LayoutArea.ARCH == elemBase.getLayout()) { //фильтр для арки профиля AYPC.W62.0101
+                } else if (ruleclkRec.riskl == PAR4 && TypeElem.FRAME_BOX == type && LayoutArea.ARCH == elemBase.getLayout()) { //фильтр для арки профиля AYPC.W62.0101
                     checkRuleColor(ruleclkRec, specifElemRec); //профиль с радиусом
 
                 } else {

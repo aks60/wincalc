@@ -257,7 +257,7 @@ public class CalcConstructiv extends CalcBase {
                 for (Artsvst svst : svstList) {
                     if (svst.clcod == iwin.getColorProfile(1)) {
                         is = true;
-                        LinkedList<ElemFrame> elemRamaList = root.getElemList(TypeElem.FRAME);
+                        LinkedList<ElemFrame> elemRamaList = root.getElemList(TypeElem.FRAME_BOX);
                         for (ElemFrame elemRama : elemRamaList) {
                             elemRama.setSpecifElement(sysproaRec);
                             ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemRama.getArticlesRec().aseri); //состав для серии профилей
@@ -299,7 +299,7 @@ public class CalcConstructiv extends CalcBase {
                 for (Artsvst svst : svstList) {
                     if (svst.clcod == iwin.getColorProfile(1)) {
                         is = true;
-                        LinkedList<ElemFrame> elemStvorkaList = root.getElemList(TypeElem.STVORKA);
+                        LinkedList<ElemFrame> elemStvorkaList = root.getElemList(TypeElem.FRAME_STV);
                         for (ElemFrame elemStvorka : elemStvorkaList) {
                             elemStvorka.setSpecifElement(sysproaRec);
                             ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemStvorka.getArticlesRec().aseri); //состав для серии профилей

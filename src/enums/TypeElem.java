@@ -9,9 +9,9 @@ public enum TypeElem {
 
     MOSKITKA_SET(-13, "Москитка"),
     GLASS(1, "Стеклопакет"),
-    FRAME(2, "Рама"),
+    FRAME_BOX(2, "Рама коробки"),
     IMPOST(3, "Импост"),
-    STVORKA(4, "Створка"),
+    FRAME_STV(4, "Рама створки"),
     SHTULP(10, "Штульп"),
     MOSKITKA(13, "Москитка"),
     RASKLADKA(14, "Раскладка"),
