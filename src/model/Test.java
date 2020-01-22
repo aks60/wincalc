@@ -17,7 +17,7 @@ public class Test {
                 Constructive.getConstructive((short) 177);
                 
             } else if (_case.equals("dll")) {
-                iwin.create(Area.test(601010));
+                iwin.create(Area.test(601002));
                 System.out.println();
                 
             } else {
