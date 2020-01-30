@@ -34,7 +34,7 @@ public class IWindows {
     protected float width = 0.f;  //ширина окна
     protected float height = 0.f;  //высота окна
     protected float heightAdd = 0.f; //арка, трапеция, треугольник
-    private float scale = .3f; //массштаб рисунка
+    private float scale = .8f; //массштаб рисунка
     protected int colorBase = -1; //базовый цвет
     protected int colorInternal = -1; //внутренний цвет
     protected int colorExternal = -1; //внещний цвет
@@ -105,7 +105,7 @@ public class IWindows {
             constructiv.kitsFirst();                       //комплекты
             tariffic.calculate(elemList);                  //тарификация
             rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
-            rootArea.drawWin(.3f, bufferSmallImg, false);  //small рис.
+            //rootArea.drawWin(.3f, bufferSmallImg, false);  //small рис.
             rootArea.resposeParamJson();                   //выходные пар.
         } catch (Exception e) {
             System.out.println("Ошибка калькуляции конструктива IWin.create() " + e);
