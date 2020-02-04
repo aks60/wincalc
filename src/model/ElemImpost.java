@@ -196,6 +196,6 @@ public class ElemImpost extends ElemBase {
 
     @Override
     public String toString() {
-        return "IMPOST ID=" + id + ", расположение=" + getLayout() + ", угол1=" + anglCut1 + ", угол2=" + anglCut2;
+        return super.toString() + ", anglCut=" + anglCut1 + ", anglCut=" + anglCut1;
     }
 }

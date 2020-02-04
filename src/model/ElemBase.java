@@ -452,6 +452,7 @@ public abstract class ElemBase {
     protected void strokeArc(double x, double y, double w, double h, double startAngle,
                              double arcExtent, ArcType closure, int rdbStroke, double lineWidth) {
 
+        //System.out.println("x= " + x + " y = " + y + " w= " + w + " h= " + h + " arcExtent=" + arcExtent + " lineWidth=" + lineWidth);
         float scale = getRoot().getIwin().getScale();
         Graphics2D gc = getRoot().getIwin().getImg().createGraphics();
         gc.setStroke(new BasicStroke((float) lineWidth * scale)); //толщина линии
@@ -483,4 +484,8 @@ public abstract class ElemBase {
     public boolean equals(Object obj) {
         return id == ((ElemBase) obj).id;
     }
+    
+    public String toString() {           
+        return "ELEM: owner=" + owner.id + ", id=" + id + ", x1=" + x1 + ", y1=" + y1 + ", x2=" + x2 + ", y2=" + y2;
+    }    
 }

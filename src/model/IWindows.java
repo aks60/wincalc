@@ -118,7 +118,8 @@ public class IWindows {
             //Specification.write_txt2(constr, rootArea.specificList()); //вывод уникального индекса
             //CalcBase.test_param(ParamSpecific.paramSum); //тестирование парам. спецификации
             //Main.print_joining(hmJoinElem); //соединения на консоль
-            model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем
+            //model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем
+            elemList.stream().forEach(el -> System.out.println(el));
         }
         return rootArea;
     }

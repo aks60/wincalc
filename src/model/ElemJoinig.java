@@ -114,4 +114,9 @@ public class ElemJoinig {
     public ElemBase getJoinElement(int i) {
         return (i == 1) ? joinElement1 : joinElement2;
     }
+    
+    public String toString() {
+        return "ELEM: name=NONE" + ", joinElement1=" + joinElement1.id + ", joinElement1=" + joinElement2.id
+                + ", cutAngl1=" + cutAngl1 + ", cutAngl2=" + cutAngl1 + ", typeJoin=NONE" + ", varJoin=" + varJoin + ", anglProf=" + anglProf;
+    }    
 }

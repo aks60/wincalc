@@ -94,6 +94,7 @@ public class ElemGlass extends ElemBase {
             x2 = owner.width - x1;
             radiusGlass = (float) r;
             width = x2 - x1;
+            
             specificationRec.width = width;
 
             specificationRec.id = id;
@@ -189,6 +190,6 @@ public class ElemGlass extends ElemBase {
 
     @Override
     public String toString() {
-        return "GLASS ID=" + id + ", расположение=" + getLayout() + ", ширина=" + width + ", высота=" + height + "x1=" + x1 + ", y=" + y1 + ", x2=" + x2 + ", y2=" + y2;
+        return super.toString() + ", radiusGlass=" + radiusGlass;
     }
 }
