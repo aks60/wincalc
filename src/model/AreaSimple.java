@@ -438,6 +438,7 @@ public class AreaSimple extends ElemBase {
             strokeArc(width / 2 - r, 0, r * 2, r * 2, ang1, (90 - ang1) * 2 + 1, ArcType.OPEN, 0, 3); //прорисовка на сцену
             strokeArc(width / 2 - r + dz, dz, (r - dz) * 2, (r - dz) * 2, ang2, (90 - ang2) * 2 + 1, ArcType.OPEN, 0, 3); //прорисовка на сцену
             strokeArc(width / 2 - r + dz / 2, dz / 2, (r - dz / 2) * 2, (r - dz / 2) * 2, ang2, (90 - ang2) * 2 + 1, ArcType.OPEN, rgb, dz - 4); //прорисовка на сцену
+            
         } else {
             hmElemFrame.get(LayoutArea.TOP).drawElemList();
         }
