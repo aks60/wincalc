@@ -4,7 +4,7 @@ import constr.Specification;
 import domain.Artikls;
 import domain.Sysproa;
 import enums.*;
-import javafx.scene.paint.Color;
+import java.awt.Color;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

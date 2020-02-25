@@ -6,8 +6,6 @@ import domain.Constructive;
 import domain.Parlist;
 import domain.Sysproa;
 import enums.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.ArcType;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -450,10 +448,10 @@ public abstract class ElemBase {
     }
 
     protected void strokeArc(double x, double y, double w, double h, double startAngle,
-                             double arcExtent, ArcType closure, int rdbStroke, double lineWidth) {
+                             double arcExtent, int rdbStroke, double lineWidth) {
 
-        System.out.println("x= " + x + " y = " + y + " w= " + w + " h= " + h + " startAngle=" + startAngle 
-                + " arcExtent=" + arcExtent + " closure=" + closure + " rdbStroke=" + rdbStroke + " lineWidth=" + lineWidth);
+        //System.out.println("x= " + x + " y = " + y + " w= " + w + " h= " + h + " startAngle=" + startAngle 
+                //+ " arcExtent=" + arcExtent + " rdbStroke=" + rdbStroke + " lineWidth=" + lineWidth);
         float scale = getRoot().getIwin().getScale();
         Graphics2D gc = getRoot().getIwin().getImg().createGraphics();
         gc.setStroke(new BasicStroke((float) lineWidth * scale)); //толщина линии
