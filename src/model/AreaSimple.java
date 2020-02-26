@@ -6,9 +6,6 @@ import domain.Sysproa;
 import enums.LayoutArea;
 import enums.TypeElem;
 import enums.TypeProfile;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.ArcType;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -435,10 +432,9 @@ public class AreaSimple extends ElemBase {
             int rgb = Colslst.get2(getRoot().getConst(), ef.colorInternal).cview;
             double ang1 = 90 - Math.toDegrees(Math.asin(width / (r * 2)));
             double ang2 = 90 - Math.toDegrees(Math.asin((width - 2 * dz) / ((r - dz) * 2)));
-            strokeArc(width / 2 - r, 0, r * 2, r * 2, ang1, (90 - ang1) * 2 + 1, ArcType.OPEN, 0, 3); //прорисовка на сцену
-            strokeArc(width / 2 - r + dz, dz, (r - dz) * 2, (r - dz) * 2, ang2, (90 - ang2) * 2 + 1, ArcType.OPEN, 0, 3); //прорисовка на сцену
-            strokeArc(width / 2 - r + dz / 2, dz / 2, (r - dz / 2) * 2, (r - dz / 2) * 2, ang2, (90 - ang2) * 2 + 1, ArcType.OPEN, rgb, dz - 4); //прорисовка на сцену
-            
+            strokeArc(width / 2 - r, 0, r * 2, r * 2, ang1, (90 - ang1) * 2 + 1, 0, 3); //прорисовка на сцену
+            strokeArc(width / 2 - r + dz, dz, (r - dz) * 2, (r - dz) * 2, ang2, (90 - ang2) * 2 + 1, 0, 3); //прорисовка на сцену
+            strokeArc(width / 2 - r + dz / 2, dz / 2, (r - dz / 2) * 2, (r - dz / 2) * 2, ang2, (90 - ang2) * 2 + 1, rgb, dz - 4); //прорисовка на сцену
         } else {
             hmElemFrame.get(LayoutArea.TOP).drawElemList();
         }

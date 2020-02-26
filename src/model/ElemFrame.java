@@ -8,7 +8,7 @@ import enums.LayoutArea;
 import enums.TypeArtikl;
 import enums.TypeElem;
 import enums.TypeProfile;
-import javafx.scene.paint.Color;
+import java.awt.Color;
 
 /**
  * Элементы рамы окна
