@@ -114,11 +114,12 @@ public class IWindows {
         //Тестирование
         if (production == false) {
             //System.out.println(productJson); //вывод на консоль json
-            //Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
+            Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
+            //Specification.write_csv(rootArea.specificList()); //вывод на тестирование в CSV (похоже ошибка)
             //Specification.write_txt2(constr, rootArea.specificList()); //вывод уникального индекса
             //CalcBase.test_param(ParamSpecific.paramSum); //тестирование парам. спецификации
             //Main.print_joining(hmJoinElem); //соединения на консоль
-            model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем
+            //model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем
             //elemList.stream().forEach(el -> System.out.println(el));
         }
         return rootArea;

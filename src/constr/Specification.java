@@ -186,7 +186,8 @@ public class Specification {
     public static void write_csv(ArrayList<Specification> spcList) {
         Writer writer = null;
         try {
-            File file = new File("C:\\Java\\IWinCalc\\out\\Specification.csv.");
+            //File file = new File("C:\\Java\\IWinCalc\\out\\Specification.csv.");
+            File file = new File("C:\\Okna\\wincalc\\src\\resource\\file\\Specification.csv.");
             writer = new BufferedWriter(new FileWriter(file));
 
             writer.write(new String(("TEST Изделие, Элемент, Артикул, Наименование, Текстура, Внутренняя, Внешняя, Длина. мм, " +

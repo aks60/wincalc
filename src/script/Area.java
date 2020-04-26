@@ -200,7 +200,6 @@ public class Area extends Element {
             rootArea.add(new Element("3", TypeElem.FRAME_BOX, LayoutArea.RIGHT));
             rootArea.add(new Element("4", TypeElem.FRAME_BOX, LayoutArea.TOP));
             rootArea.add(new Element("5", TypeElem.FRAME_BOX, LayoutArea.BOTTOM));
-
             Area area2 = (Area) rootArea.add(new Area("6", LayoutArea.HORIZONTAL, TypeElem.AREA, 1300 / 2));
             rootArea.add(new Element("7", TypeElem.IMPOST));
             Area area3 = (Area) rootArea.add(new Area("8", LayoutArea.HORIZONTAL, TypeElem.AREA, 1300 / 2));
