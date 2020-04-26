@@ -216,8 +216,8 @@ public class Specification {
 
     public static void write_txt(Constructive c, ArrayList<Specification> specList) {
 
-        String path = "C:\\Java\\specific_compare.txt";
-        try (PrintStream printStream = new PrintStream(path, "windows-1251")) {
+        //String path = "C:\\Java\\specific_compare.txt";
+        //try (PrintStream printStream = new PrintStream(path, "windows-1251")) {
             int npp = 0;
             String format = "%-6s%-46s%-32s%-32s%-32s%-32s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s" +
                     "%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s %n";
@@ -226,8 +226,9 @@ public class Specification {
                     "Angle", "ComplType", "ElemID", "ElemType", "ObjectID", "ObjectType", "AreaID", "AreaType",
                     "AccessoryID", "PriceGRP", "PrintGroup", "CutAngle1", "CutAngle2", "Composite", "Усл.окна"};
             String str3 = new String(("Спецификация (" + specList.size() + " строк):").getBytes());
-            printStream.println(str3);
-            printStream.printf(format, str);
+            //printStream.println(str3);
+            //printStream.printf(format, str);
+            System.out.printf(format, str);
             for (Specification s : specList) {
 
                 Object str2[] = {String.valueOf(++npp), s.name, s.artikl, Colslst.get2(c, s.colorBase).cname,
@@ -235,8 +236,7 @@ public class Specification {
                         MeasUnit.getName(s.unit), "0", String.valueOf(s.inPrice), String.valueOf(s.outPrice), String.valueOf(s.inCost),
                         String.valueOf(s.width), String.valueOf(s.height), "0", "0", "0", String.valueOf(s.id), "0", "0", "0", "0", "0",
                         "0", "0", "0", String.valueOf(s.anglCut2), String.valueOf(s.anglCut1), "0", "0"};
-
-                printStream.printf(format, str2);
+                //printStream.printf(format, str2);
                 System.out.printf(format, str2);
             }
             float totalVal = 0;
@@ -244,12 +244,10 @@ public class Specification {
                 totalVal = totalVal + s.outCost;
             }
             String str4 = new String(("Суммарная цена = " + totalVal).getBytes());
-            printStream.printf("%-120s", str4);
+            //printStream.printf("%-120s", str4);
             System.out.println(str4);
 
-        } catch (IOException ex) {
-            System.out.println("Ошибка Specification.write_txt() " + ex);
-        }
+        //} catch (IOException ex) {    System.out.println("Ошибка Specification.write_txt() " + ex);   }
     }
 
     public static void write_txt2(Constructive c, ArrayList<Specification> specList) {

@@ -407,6 +407,7 @@ public abstract class ElemBase {
         for (ElemBase elemBase : elemList) {
             specList.addAll(elemBase.getSpecificationList());
         }
+        Collections.sort(specList, Collections.reverseOrder((a, b) -> a.name.compareTo(b.name)));
         return specList;
     }
 
