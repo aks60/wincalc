@@ -96,7 +96,7 @@ public class Sysproa {
 
     public static void load(Constructive constructive, Statement stmt) throws SQLException {
         //String sql = constructive.fromPS ? "select * from SYSPROA" : "select * from PRO4_SYSPROA where REGION_ID=" + constructive.regionId + " ORDER BY ANUMB, APRIO";
-        String sql = constructive.fromPS ? "select * from SYSPROA" : "select * from PRO4_SYSPROA where REGION_ID=" + constructive.regionId + " ORDER BY APRIO";
+        String sql = constructive.fromPS ? "select * from SYSPROA  ORDER BY APRIO" : "select * from PRO4_SYSPROA where REGION_ID=" + constructive.regionId + " ORDER BY APRIO";
         try (ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Sysproa item = new Sysproa(rs);
