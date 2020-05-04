@@ -46,7 +46,6 @@ public class Main extends javax.swing.JFrame {
 
                     IWindows iwin = new IWindows(Constructive.getConstructive((short) 177));
 
-
                     frame.rootArea = iwin.create(iwin.productParamsJson);
                     JTable jtable = frame.initTable();
                     Constructive constructive = iwin.getConstr();
@@ -61,11 +60,11 @@ public class Main extends javax.swing.JFrame {
                     float totalJAR = 0;
                     for (Specification s : specList) {
                         Object val[] = {++row, s.id, s.element, s.artikl, s.name, Colslst.get2(constructive, s.colorBase).cname,
-                                Colslst.get2(constructive, s.colorInternal).cname, Colslst.get2(constructive, s.colorExternal).cname,
-                                (s.width == 0) ? "" : str(s.width), (s.height == 0) ? "" : str(s.height), str(s.anglCut1),
-                                str(s.anglCut2), String.valueOf(s.count), MeasUnit.getName(s.unit)
-                                , str(s.quantity), str(s.wastePrc)
-                                , str(s.quantity2), str(s.inPrice), str(s.outPrice), str(s.inCost), str(s.discount), str(s.outCost)};
+                            Colslst.get2(constructive, s.colorInternal).cname, Colslst.get2(constructive, s.colorExternal).cname,
+                            (s.width == 0) ? "" : str(s.width), (s.height == 0) ? "" : str(s.height), str(s.anglCut1),
+                            str(s.anglCut2), String.valueOf(s.count), MeasUnit.getName(s.unit),
+                             str(s.quantity), str(s.wastePrc),
+                             str(s.quantity2), str(s.inPrice), str(s.outPrice), str(s.inCost), str(s.discount), str(s.outCost)};
 
                         totalJAR = totalJAR + s.inCost;
                         ((DefaultTableModel) jtable.getModel()).addRow(val);
@@ -97,14 +96,14 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 800));
         jTable = new javax.swing.JTable(new javax.swing.table.DefaultTableModel(null, new String[]{
-                "npp", "id", "Расположение", "Артикул", "Наименование", "Текстура", "Внутренняя",
-                "Внещняя", "Длина", "Щирина", "Угол1", "Угол2", "<html>Кол.<br>единиц", "<html>Ед.<br>измер.",
-                "<html>Колич.<br>без отх.", "<html>Проц.<br>отхода", "<html>Колич.<br>с отх.",
-                "<html>Собест.<br>за ед.изм.", "<html>Собест.<br>с отх.", "<html>Собест.<br>без ск.",
-                "Скидка", "Итого"
+            "npp", "id", "Расположение", "Артикул", "Наименование", "Текстура", "Внутренняя",
+            "Внещняя", "Длина", "Щирина", "Угол1", "Угол2", "<html>Кол.<br>единиц", "<html>Ед.<br>измер.",
+            "<html>Колич.<br>без отх.", "<html>Проц.<br>отхода", "<html>Колич.<br>с отх.",
+            "<html>Собест.<br>за ед.изм.", "<html>Собест.<br>с отх.", "<html>Собест.<br>без ск.",
+            "Скидка", "Итого"
         }) {
             boolean[] canEdit = new boolean[]{false, false, false, false, false, false, false, false,
-                    false, false, false, false, false, false, false, false, false, false, false, false, false, false};
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false};
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
@@ -116,8 +115,9 @@ public class Main extends javax.swing.JFrame {
         panSpecif.add(jScrollPane, java.awt.BorderLayout.CENTER);
 
         int col_width[] = {30, 30, 80, 140, 250, 80, 80, 80, 60, 60, 50, 50, 40, 70, 70, 54, 60, 70, 70, 62, 50, 70};
-        for (int index = 0; index < col_width.length; index++)
+        for (int index = 0; index < col_width.length; index++) {
             jTable.getColumnModel().getColumn(index).setPreferredWidth(col_width[index]);
+        }
 
         jTable.getTableHeader().setPreferredSize(new Dimension(100, 32));
         getContentPane().add(panSpecif, java.awt.BorderLayout.CENTER);
@@ -189,7 +189,9 @@ public class Main extends javax.swing.JFrame {
                 String art = sheet.getCell(1, i).getContents().trim();
                 String key = sheet.getCell(2, i).getContents().trim().replaceAll("[\\s]{1,}", " ");
                 String val = sheet.getCell(10, i).getContents();
-                if (key.isEmpty() || art.isEmpty() || val.isEmpty()) continue;
+                if (key.isEmpty() || art.isEmpty() || val.isEmpty()) {
+                    continue;
+                }
 
                 val = val.replaceAll("[\\s|\\u00A0]+", "");
                 val = val.replace(",", ".");
@@ -204,6 +206,7 @@ public class Main extends javax.swing.JFrame {
                 }
             }
             if (frame == true) {
+                System.out.println();
                 System.out.printf("%-64s%-24s%-16s%-16s%-16s", new Object[]{"Name", "Artikl", "Dll", "Jar", "Delta"});
                 System.out.println();
                 for (Map.Entry<String, Float> entry : hmDll.entrySet()) {
@@ -216,10 +219,10 @@ public class Main extends javax.swing.JFrame {
                     jarTotal = jarTotal + val2;
                     iwinTotal = iwinTotal + val1;
                 }
-                System.out.println();
-                if (hmJar.isEmpty() == false)
+                if (hmJar.isEmpty() == false) {
                     System.out.printf("%-72s%-24s%-20s", new Object[]{"Name", "Artikl", "Value"});
-                System.out.println();
+                    System.out.println();
+                }
                 for (Map.Entry<String, Float> entry : hmJar.entrySet()) {
                     String key = entry.getKey();
                     Float value3 = entry.getValue();
@@ -228,7 +231,7 @@ public class Main extends javax.swing.JFrame {
                     jarTotal = jarTotal + value3;
                 }
             } else {
-                for (Map.Entry<String, Float> entry : hmDll.entrySet()) {
+                /* for (Map.Entry<String, Float> entry : hmDll.entrySet()) {
                     String key = entry.getKey();
                     Float val1 = entry.getValue();
                     Float val2 = (hmJar.get(key) == null) ? 0.f : hmJar.get(key);
@@ -240,7 +243,7 @@ public class Main extends javax.swing.JFrame {
                     String key = entry.getKey();
                     Float value3 = entry.getValue();
                     jarTotal = jarTotal + value3;
-                }
+                }*/
             }
             System.out.printf("%-18s%-18s%-18s%-12s", "Prj=" + prj, "iwin=" + String.format("%.2f", iwinTotal), "jar="
                     + String.format("%.2f", jarTotal), "dx=" + String.format("%.2f", Math.abs(iwinTotal - jarTotal)));
@@ -255,20 +258,22 @@ public class Main extends javax.swing.JFrame {
 
         System.out.println("BEGIN_JOIN");
         for (Map.Entry<String, ElemJoinig> entry : hmJoinElem.entrySet()) {
-            System.out.println("id=" + entry.getValue().id +
-                    " JOIN=" + entry.getValue().varJoin + "  POINT:" + entry.getKey() + ", " +
-                    getSId("LEFT", entry.getValue().elemJoinLeft) + " , " +
-                    getSId("RIGHT", entry.getValue().elemJoinRight) + ", " +
-                    getSId("TOOP", entry.getValue().elemJoinTop) + ", " +
-                    getSId("BOTTOM", entry.getValue().elemJoinBottom)); // + ", " +
-                    //"art1:" + entry.getValue().joinElement1.articlesRec.anumb + ", " +
-                    //"art2:" + entry.getValue().joinElement2.articlesRec.anumb);
+            System.out.println("id=" + entry.getValue().id
+                    + " JOIN=" + entry.getValue().varJoin + "  POINT:" + entry.getKey() + ", "
+                    + getSId("LEFT", entry.getValue().elemJoinLeft) + " , "
+                    + getSId("RIGHT", entry.getValue().elemJoinRight) + ", "
+                    + getSId("TOOP", entry.getValue().elemJoinTop) + ", "
+                    + getSId("BOTTOM", entry.getValue().elemJoinBottom)); // + ", " +
+            //"art1:" + entry.getValue().joinElement1.articlesRec.anumb + ", " +
+            //"art2:" + entry.getValue().joinElement2.articlesRec.anumb);
         }
         System.out.println("END_JOIN");
     }
 
     public static String getSId(String side, ElemBase el) {
-        if (el == null) return side + ":0";
+        if (el == null) {
+            return side + ":0";
+        }
         return side + ":" + String.valueOf(el.id);
     }
 }
