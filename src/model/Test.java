@@ -10,7 +10,7 @@ public class Test {
      */
     public static void main(String[] args) {
         try {
-            String _case = "min";            
+            String _case = "max";            
             IWindows.production = false;
             IWindows iwin = new IWindows(Constructive.getConstructive((short) 177));
             if (_case.equals("con")) {                
