@@ -99,11 +99,11 @@ public class IWindows {
         //Калькуляция
         try {
             constructiv.compositionFirst();                //составы
-//            constructiv.joiningFirst();                    //соединения
-//            constructiv.fillingFirst();                    //заполнения
-//            constructiv.fittingFirst();                    //фурнитура
-//            constructiv.kitsFirst();                       //комплекты
-//            tariffic.calculate(elemList);                  //тарификация
+            constructiv.joiningFirst();                    //соединения
+            constructiv.fillingFirst();                    //заполнения
+            constructiv.fittingFirst();                    //фурнитура
+            constructiv.kitsFirst();                       //комплекты
+            tariffic.calculate(elemList);                  //тарификация
 //            rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
 //            rootArea.drawWin(.3f, bufferSmallImg, false);  //small рис.
 //            rootArea.resposeParamJson();                   //выходные пар.
@@ -114,8 +114,8 @@ public class IWindows {
         //Тестирование
         if (production == false) {
             //Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            //model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
+            //Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
+            model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
             //System.out.println(productJson); //вывод на консоль json
             //Specification.write_txt2(constr, rootArea.specificList()); //вывод уникального индекса
             //CalcBase.test_param(ParamSpecific.paramSum); //тестирование парам. спецификации
