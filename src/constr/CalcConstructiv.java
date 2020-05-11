@@ -302,8 +302,8 @@ public class CalcConstructiv extends CalcBase {
                         LinkedList<ElemFrame> elemStvorkaList = root.getElemList(TypeElem.FRAME_STV);
                         for (ElemFrame elemStvorka : elemStvorkaList) {
                             elemStvorka.setSpecifElement(sysproaRec);
-                            //ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemStvorka.getArticlesRec().aseri); //состав для серии профилей
-                            //compositionSecond(vstalstList2, elemStvorka);
+                            ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemStvorka.getArticlesRec().aseri); //состав для серии профилей
+                            compositionSecond(vstalstList2, elemStvorka);
                             ArrayList<Vstalst> vstalstList = Vstalst.find(constr, elemStvorka.getArticlesRec().anumb); //состав для артикула профиля
                             compositionSecond(vstalstList, elemStvorka);
                         }
