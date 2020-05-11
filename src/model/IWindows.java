@@ -104,9 +104,9 @@ public class IWindows {
             constructiv.fittingFirst();                    //фурнитура
             constructiv.kitsFirst();                       //комплекты
             tariffic.calculate(elemList);                  //тарификация
-//            rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
-//            rootArea.drawWin(.3f, bufferSmallImg, false);  //small рис.
-//            rootArea.resposeParamJson();                   //выходные пар.
+            rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
+            rootArea.drawWin(.3f, bufferSmallImg, false);  //small рис.
+            rootArea.resposeParamJson();                   //выходные пар.
         } catch (Exception e) {
             System.out.println("Ошибка калькуляции конструктива IWin.create() " + e);
         }
