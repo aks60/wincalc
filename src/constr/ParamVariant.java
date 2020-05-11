@@ -73,17 +73,17 @@ public class ParamVariant {
                     }
                     break;
                 case 31004: //Если прилегающий артикул
-                    HashMap<String, ElemJoinig> hmJoinElem = elemBase.getRoot().getHmJoinElem();
-                    boolean ret = false;
-                    for (Map.Entry<String, ElemJoinig> elemJoin : hmJoinElem.entrySet()) {
-                        ElemJoinig el = elemJoin.getValue();
-                        if (VariantJoin.VAR4 == el.getVarJoin() &&
-                                el.getJoinElement(1).getArticlesRec().equals(elemBase.getArticlesRec()) &&
-                                el.getJoinElement(2).getArticlesRec().equals(param.ptext())) {
-                            ret = true;
-                        }
-                    }
-                    if (ret == false) return false;
+//                    HashMap<String, ElemJoinig> hmJoinElem = elemBase.getRoot().getHmJoinElem();
+//                    boolean ret = false;
+//                    for (Map.Entry<String, ElemJoinig> elemJoin : hmJoinElem.entrySet()) {
+//                        ElemJoinig el = elemJoin.getValue();
+//                        if (VariantJoin.VAR4 == el.getVarJoin() &&
+//                                el.getJoinElement(1).getArticlesRec().equals(elemBase.getArticlesRec()) &&
+//                                el.getJoinElement(2).getArticlesRec().equals(param.ptext())) {
+//                            ret = true;
+//                        }
+//                    }
+//                    if (ret == false) return false;
                     break;
                 case 31005: //Коды основной текстуры контейнера
                     if (CalcConstructiv.compareInt(param.ptext(), elemBase.getColor(1)) == false) return false;
