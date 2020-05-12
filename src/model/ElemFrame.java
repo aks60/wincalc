@@ -31,6 +31,7 @@ public class ElemFrame extends ElemBase {
         initСonstructiv();
         if (LayoutArea.LEFT == side) {
             setDimension(owner.x1, owner.y1, owner.x1 + articlesRec.aheig, owner.y2);
+            anglHoriz = 270;
 
         } else if (LayoutArea.RIGHT == side) {
             setDimension(owner.x2 - articlesRec.aheig, owner.y1, owner.x2, owner.y2);

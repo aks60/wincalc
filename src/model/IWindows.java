@@ -25,7 +25,7 @@ public class IWindows {
 
     protected static boolean production = false;
     protected final Constructive constr;
-    protected static final HashMap<Short, Constructive> constrMap = new HashMap<>();
+    //protected static final HashMap<Short, Constructive> constrMap = new HashMap<>();
     protected int nuni = 0;
     protected Artikls articlesRec = null;  //главный артикл системы профилей
     protected String prj = "empty";
