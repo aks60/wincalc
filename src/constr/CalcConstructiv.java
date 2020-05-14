@@ -260,11 +260,10 @@ public class CalcConstructiv extends CalcBase {
                         LinkedList<ElemFrame> elemRamaList = root.getElemList(TypeElem.FRAME_BOX);
                         for (ElemFrame elemRama : elemRamaList) {
                             elemRama.setSpecifElement(sysproaRec);
-                            System.out.println(elemRama.getArticlesRec().aseri);
                             ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemRama.getArticlesRec().aseri); //состав для серии профилей
                             compositionSecond(vstalstList2, elemRama);
                             ArrayList<Vstalst> vstalstList = Vstalst.find(constr, elemRama.getArticlesRec().anumb); //состав для артикула профиля
-                            compositionSecond(vstalstList, elemRama);
+                           compositionSecond(vstalstList, elemRama);
 
                             elemRama.getSpecificationRec().width = elemRama.getSpecificationRec().width + Float.valueOf(elemRama.getHmParam(0, 31052));
                         }
