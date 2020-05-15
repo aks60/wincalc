@@ -255,13 +255,13 @@ public class Specification {
         Specification.sort(specList);
         int npp = 0;
         String format = "%-6s%-46s%-26s%-12s%-12s%-12s";
-        Object str[] = {"Code", "Name", "Art", "areaId", "elemId", "elemType"};
+        Object str[] = {"Code", "Name", "Art", "areaId", "elemId", "owner"};
         System.out.printf(format, str);
         System.out.println();
         float total = 0;
         for (Specification s : specList) {
             Object str2[] = {String.valueOf(++npp), s.name, s.artikl,
-                    s.areaId, s.elemId, s.elemType};
+                    s.areaId, s.elemId, s.elemOwnerSpecif.getSpecificationRec().articlesRec.anumb};
             total = total + s.weight;
             System.out.printf(format, str2);
             System.out.println();
