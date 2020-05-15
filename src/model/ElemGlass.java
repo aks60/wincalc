@@ -98,7 +98,7 @@ public class ElemGlass extends ElemBase {
             specificationRec.width = width;
 
             specificationRec.id = id;
-            specificationRec.element = "Арочное";
+            specificationRec.layout = "Арочное";
             specificationRec.setArticlRec(articlesRec);
             specificationRec.colorBase = colorBase;
             specificationRec.colorInternal = colorInternal;
@@ -123,7 +123,7 @@ public class ElemGlass extends ElemBase {
             specificationRec.width = width;
             specificationRec.height = height;
             specificationRec.id = id;
-            specificationRec.element = "Прямоугольное";
+            specificationRec.layout = "Прямоугольное";
             specificationRec.setArticlRec(articlesRec);
             specificationRec.colorBase = colorBase;
             specificationRec.colorInternal = colorInternal;
@@ -142,7 +142,7 @@ public class ElemGlass extends ElemBase {
     public void addSpecifSubelem(Specification specif) {
 
         indexUniq(specif);
-        specif.element = "ЗАП";
+        specif.layout = "ЗАП";
         if (TypeArtikl.GLASS.value2 == specif.getArticRec().atypp && specif.getArticRec().atypm == 5) { //стеклопакет
             return;
 

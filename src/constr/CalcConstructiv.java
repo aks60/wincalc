@@ -171,7 +171,7 @@ public class CalcConstructiv extends CalcBase {
                 specif.count = Integer.valueOf(specif.getHmParam(specif.count, 24030));
                 specif.count = specif.count * count;
                 specif.setColor(this, elStvorka, furnspcRec);
-                specif.element = "FURN";
+                specif.layout = "FURN";
                 elStvorka.addSpecifSubelem(specif); //добавим спецификацию в элемент
             }
             return true;
@@ -234,7 +234,7 @@ public class CalcConstructiv extends CalcBase {
                         specif.colorBase = artsvst.clcod;
                         specif.colorInternal = artsvst.clcod;
                         specif.colorExternal = artsvst.clcod;
-                        specif.element = "СОЕД";
+                        specif.layout = "СОЕД";
                         joinElement1.addSpecifSubelem(specif);
                     }
                 }
@@ -338,7 +338,7 @@ public class CalcConstructiv extends CalcBase {
                         Artikls artikl = Artikls.get(constr, vstaspcRec.anumb, false);
                         Specification specif = new Specification(artikl, elemBase, hmParam);
                         specif.setColor(this, elemBase, vstaspcRec);
-                        specif.element = "СОСТ";
+                        specif.layout = "СОСТ";
                         elemBase.addSpecifSubelem(specif); //добавим спецификацию в элемент
                     }
                 }

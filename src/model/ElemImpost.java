@@ -67,7 +67,7 @@ public class ElemImpost extends ElemBase {
     public void setSpecifElement(Sysproa sysproaRec) {
 
         indexUniq(specificationRec);
-        specificationRec.element = (LayoutArea.HORIZONTAL == owner.getLayout()) ? LayoutArea.VERTICAL.name : LayoutArea.HORIZONTAL.name;
+        specificationRec.layout = (LayoutArea.HORIZONTAL == owner.getLayout()) ? LayoutArea.VERTICAL.name : LayoutArea.HORIZONTAL.name;
         specificationRec.setArticlRec(Artikls.get(getConst(), sysproaRec.anumb, false));
         specificationRec.colorBase = colorBase;
         specificationRec.colorInternal = colorInternal;
@@ -128,7 +128,7 @@ public class ElemImpost extends ElemBase {
 
             //Теперь армирование
         } else if (TypeArtikl.ARMIROVANIE.value2 == specifArtikl.atypp && specifArtikl.atypm == 1) {
-            specif.element = side.name;
+            specif.layout = side.name;
 
             //if (LayoutArea.HORIZONTAL == side) specif.width = owner.x2 - owner.x1;
             //else if(LayoutArea.VERTICAL == side) specif.width = owner.y2 - owner.y1;

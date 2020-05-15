@@ -59,7 +59,7 @@ public class Main extends javax.swing.JFrame {
                     Specification.sort(specList);
                     float totalJAR = 0;
                     for (Specification s : specList) {
-                        Object val[] = {++row, s.id, s.element, s.artikl, s.name, Colslst.get2(constructive, s.colorBase).cname,
+                        Object val[] = {++row, s.id, s.layout, s.artikl, s.name, Colslst.get2(constructive, s.colorBase).cname,
                             Colslst.get2(constructive, s.colorInternal).cname, Colslst.get2(constructive, s.colorExternal).cname,
                             (s.width == 0) ? "" : str(s.width), (s.height == 0) ? "" : str(s.height), str(s.anglCut1),
                             str(s.anglCut2), String.valueOf(s.count), MeasUnit.getName(s.unit),

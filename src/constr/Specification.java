@@ -25,7 +25,7 @@ public class Specification {
     public String areaId = "0"; //ID area
     public String elemId = "0"; //ID elem
     public String elemType = "0"; //TypeElem
-    public String element = "-"; //Расположение
+    public String layout = "-"; //Расположение
     public String artikl = "-";  //Артикул
     public String name = "-";  //Наименование
     public int colorBase = 1005;  //Текстура
@@ -76,7 +76,7 @@ public class Specification {
 
     public Specification(Specification spec) {
         this.id = spec.elemOwnerSpecif.genId();
-        this.element = spec.element;
+        this.layout = spec.layout;
         this.artikl = spec.artikl;
         this.name = spec.name;
         this.colorBase = spec.colorBase;
@@ -167,7 +167,7 @@ public class Specification {
     public boolean equals(Object specification) {
         Specification spec = (Specification) specification;
 
-        return (id == spec.id && element.equals(spec.element) && artikl.equals(spec.artikl) && name.equals(spec.name)
+        return (id == spec.id && layout.equals(spec.layout) && artikl.equals(spec.artikl) && name.equals(spec.name)
                 && colorBase == spec.colorBase && colorInternal == spec.colorInternal && colorExternal == spec.colorExternal
                 && width == spec.width && height == spec.height && anglCut2 == spec.anglCut2 && anglCut1 == spec.anglCut1 &&
                 quantity == spec.quantity && unit == spec.unit && wastePrc == spec.wastePrc && quantity2 == spec.quantity2
@@ -177,7 +177,7 @@ public class Specification {
     @Override
     public String toString() {
         Formatter f = new Formatter();
-        return "Изделие=" + id + ", Расп...=" + element + ", Артикул=" + artikl + ", Наименование=" + name + ", Текстура=" + colorBase + ", Внутренняя=" + colorInternal
+        return "Изделие=" + id + ", Расп...=" + layout + ", Артикул=" + artikl + ", Наименование=" + name + ", Текстура=" + colorBase + ", Внутренняя=" + colorInternal
                 + ", Внешняя=" + colorExternal + ", Длина. мм=" + f.format("%.1f", width) + ", Ширина. мм=" + f.format("%.1f", height) + ", Угол1=" + String.format("%.2f", anglCut2) +
                 ", Угол2=" + String.format("%.2f", anglCut1) + ", Кол.шт=" + count + ", Кол.без.отх=" + quantity + ", Отход=" + wastePrc + ", Кол.с.отх=" + quantity2
                 + ", Собест.за.ед" + inPrice + ", Собест.с.отх" + outPrice + ", Скидка=" + discount;
@@ -194,7 +194,7 @@ public class Specification {
                     "Ширина. мм, Угол1, Угол2, Количество, Погонаж, Ед.изм, Ед.изм, Скидка, Скидка").getBytes("windows-1251"), "UTF-8"));
             for (Specification spc : spcList) {
 
-                String str = spc.id + "," + spc.element + "," + spc.artikl + "," + spc.name + "," + spc.colorBase + "," + spc.colorInternal + "," + spc.colorExternal
+                String str = spc.id + "," + spc.layout + "," + spc.artikl + "," + spc.name + "," + spc.colorBase + "," + spc.colorInternal + "," + spc.colorExternal
                         + "," + String.format("%.1f", spc.width) + String.format("%.1f", spc.height) + String.format("%.2f", spc.anglCut2)
                         + String.format("%.2f", spc.anglCut1) + spc.count + spc.width + spc.unit + spc.discount + "\n";
 
@@ -280,7 +280,7 @@ public class Specification {
     public static void sort2(ArrayList<Specification> contacts) {
         Collections.sort(contacts, new Comparator<Specification>() {
             public int compare(Specification one, Specification other) {
-                return (one.element + one.name).compareTo(other.element + other.name);
+                return (one.layout + one.name).compareTo(other.layout + other.name);
             }
         });
     }
@@ -288,7 +288,7 @@ public class Specification {
     public static void sort3(ArrayList<Specification> contacts) {
         Collections.sort(contacts, new Comparator<Specification>() {
             public int compare(Specification one, Specification other) {
-                return (one.artikl + one.element).compareTo(other.artikl + other.element);
+                return (one.artikl + one.layout).compareTo(other.artikl + other.layout);
             }
         });
     }
@@ -298,7 +298,7 @@ public class Specification {
         HashMap<String, Specification> hm = new HashMap();
         for (Specification spc : specificationList1) {
 
-            String key = spc.id + spc.element + spc.artikl + spc.name + spc.colorBase + spc.colorInternal + spc.colorExternal
+            String key = spc.id + spc.layout + spc.artikl + spc.name + spc.colorBase + spc.colorInternal + spc.colorExternal
                     + spc.width + spc.height + spc.anglCut2 + spc.anglCut1 + spc.unit + spc.quantity + spc.wastePrc
                     + spc.wastePrc + spc.quantity2 + spc.inPrice + spc.outPrice + spc.discount;
             Specification spc2 = hm.put(key, spc);

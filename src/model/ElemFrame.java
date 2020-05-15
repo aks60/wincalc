@@ -69,7 +69,7 @@ public class ElemFrame extends ElemBase {
 
     public void setSpecifElement(Sysproa sysproaRec) {
 
-        specificationRec.element = side.name;
+        specificationRec.layout = side.name;
         float ssizp = getRoot().iwin.syssizeRec.ssizp;
         Artikls articlesRec = Artikls.get(getConst(), sysproaRec.anumb, false);
         specificationRec.setArticlRec(articlesRec);
@@ -126,7 +126,7 @@ public class ElemFrame extends ElemBase {
 
             //Теперь армирование
         } else if (TypeArtikl.ARMIROVANIE.isType(cpecifArtikls)) {
-            specif.element = side.name;
+            specif.layout = side.name;
 
             if (LayoutArea.TOP == side || LayoutArea.BOTTOM == side) {
                 specif.width = x2 - x1;
