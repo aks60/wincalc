@@ -260,8 +260,8 @@ public class Specification {
         System.out.println();
         float total = 0;
         for (Specification s : specList) {
-            Object str2[] = {String.valueOf(++npp), s.name, s.artikl,
-                    s.areaId, s.elemId, s.elemOwnerSpecif.getSpecificationRec().articlesRec.anumb};
+            Object elem = (s.elemOwnerSpecif != null) ? s.elemOwnerSpecif.getSpecificationRec().articlesRec.anumb : null;
+            Object str2[] = {String.valueOf(++npp), s.name, s.artikl, s.areaId, s.elemId, elem};
             total = total + s.weight;
             System.out.printf(format, str2);
             System.out.println();
