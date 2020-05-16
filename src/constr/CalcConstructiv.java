@@ -272,46 +272,46 @@ public class CalcConstructiv extends CalcBase {
             }
             if (is == true) break;
         }
-//        for (Sysproa sysproaRec : sysproaList) {
-//            boolean is = false;
-//            if (TypeProfile.IMPOST.value == sysproaRec.atype) {
-//                ArrayList<Artsvst> svstList = Artsvst.find(constr, sysproaRec.anumb); //подбор текстуры, ищем не на аналоге
-//                for (Artsvst svst : svstList) {
-//                    if (svst.clcod == iwin.getColorProfile(1)) {
-//                        is = true;
-//                        LinkedList<ElemImpost> impostList = root.getElemList(TypeElem.IMPOST);
-//                        for (ElemImpost elemInpost : impostList) {
-//                            elemInpost.setSpecifElement(sysproaRec);
-//                            ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemInpost.getArticlesRec().aseri); //состав для серии профилей
-//                            compositionSecond(vstalstList2, elemInpost);
-//                            ArrayList<Vstalst> vstalstList = Vstalst.find(constr, elemInpost.getArticlesRec().anumb); //состав для артикула профиля
-//                            compositionSecond(vstalstList, elemInpost);
-//                        }
-//                    }
-//                }
-//            }
-//            if (is == true) break;
-//        }
-//        for (Sysproa sysproaRec : sysproaList) {
-//            boolean is = false;
-//            if (TypeProfile.STVORKA.value == sysproaRec.atype) {
-//                ArrayList<Artsvst> svstList = Artsvst.find(constr, sysproaRec.anumb); //подбор текстуры, ищем не на аналоге
-//                for (Artsvst svst : svstList) {
-//                    if (svst.clcod == iwin.getColorProfile(1)) {
-//                        is = true;
-//                        LinkedList<ElemFrame> elemStvorkaList = root.getElemList(TypeElem.FRAME_STV);
-//                        for (ElemFrame elemStvorka : elemStvorkaList) {
-//                            elemStvorka.setSpecifElement(sysproaRec);
-//                            ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemStvorka.getArticlesRec().aseri); //состав для серии профилей
-//                            compositionSecond(vstalstList2, elemStvorka);
-//                            ArrayList<Vstalst> vstalstList = Vstalst.find(constr, elemStvorka.getArticlesRec().anumb); //состав для артикула профиля
-//                            compositionSecond(vstalstList, elemStvorka);
-//                        }
-//                    }
-//                }
-//            }
-//            if (is == true) break;
-//        }
+        for (Sysproa sysproaRec : sysproaList) {
+            boolean is = false;
+            if (TypeProfile.IMPOST.value == sysproaRec.atype) {
+                ArrayList<Artsvst> svstList = Artsvst.find(constr, sysproaRec.anumb); //подбор текстуры, ищем не на аналоге
+                for (Artsvst svst : svstList) {
+                    if (svst.clcod == iwin.getColorProfile(1)) {
+                        is = true;
+                        LinkedList<ElemImpost> impostList = root.getElemList(TypeElem.IMPOST);
+                        for (ElemImpost elemInpost : impostList) {
+                            elemInpost.setSpecifElement(sysproaRec);
+                            ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemInpost.getArticlesRec().aseri); //состав для серии профилей
+                            compositionSecond(vstalstList2, elemInpost);
+                            ArrayList<Vstalst> vstalstList = Vstalst.find(constr, elemInpost.getArticlesRec().anumb); //состав для артикула профиля
+                            compositionSecond(vstalstList, elemInpost);
+                        }
+                    }
+                }
+            }
+            if (is == true) break;
+        }
+        for (Sysproa sysproaRec : sysproaList) {
+            boolean is = false;
+            if (TypeProfile.STVORKA.value == sysproaRec.atype) {
+                ArrayList<Artsvst> svstList = Artsvst.find(constr, sysproaRec.anumb); //подбор текстуры, ищем не на аналоге
+                for (Artsvst svst : svstList) {
+                    if (svst.clcod == iwin.getColorProfile(1)) {
+                        is = true;
+                        LinkedList<ElemFrame> elemStvorkaList = root.getElemList(TypeElem.FRAME_STV);
+                        for (ElemFrame elemStvorka : elemStvorkaList) {
+                            elemStvorka.setSpecifElement(sysproaRec);
+                            ArrayList<Vstalst> vstalstList2 = Vstalst.find2(constr, elemStvorka.getArticlesRec().aseri); //состав для серии профилей
+                            compositionSecond(vstalstList2, elemStvorka);
+                            ArrayList<Vstalst> vstalstList = Vstalst.find(constr, elemStvorka.getArticlesRec().anumb); //состав для артикула профиля
+                            compositionSecond(vstalstList, elemStvorka);
+                        }
+                    }
+                }
+            }
+            if (is == true) break;
+        }
     }
 
     /**
