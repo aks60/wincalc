@@ -114,11 +114,13 @@ public class IWindows {
         //Тестирование
         if (production == false) {
             //Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            //Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
+            Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
             //model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
             //System.out.println(productJson); //вывод на консоль json
             //CalcBase.test_param(ParamSpecific.paramSum); //тестирование парам. спецификации
-            Main.print_joining(hmJoinElem); //соединения на консоль
+            //Main.print_joining(hmJoinElem); //соединения на консоль
+            hmJoinElem.entrySet().forEach(it -> System.out.println("id=" + it.getValue().id + "  JOIN=" + it.getValue().varJoin   + "  POINT:" + it.getKey() + " (" + it.getValue().joinElement1.specificationRec.artikl + ":" + it.getValue().joinElement2.specificationRec.artikl + ")")); 
+            
             
             //elemList.stream().forEach(el -> System.out.println(el));
         }

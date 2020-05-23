@@ -254,14 +254,14 @@ public class Specification {
 
         Specification.sort(specList);
         int npp = 0;
-        String format = "%-6s%-46s%-26s%-12s%-12s%-12s";
-        Object str[] = {"Code", "Name", "Art", "areaId", "elemId", "owner"};
+        String format = "%-6s%-16s%-46s%-26s%-12s%-12s%-12s";
+        Object str[] = {"Code", "Section", "Name", "Art", "areaId", "elemId", "owner"};
         System.out.printf(format, str);
         System.out.println();
         float total = 0;
         for (Specification s : specList) {
             Object elem = (s.elemOwnerSpecif != null) ? s.elemOwnerSpecif.getSpecificationRec().articlesRec.anumb : null;
-            Object str2[] = {String.valueOf(++npp), s.name, s.artikl, s.areaId, s.elemId, elem};
+            Object str2[] = {String.valueOf(++npp), s.layout, s.name, s.artikl, s.areaId, s.elemId, elem};
             total = total + s.weight;
             System.out.printf(format, str2);
             System.out.println();
