@@ -100,11 +100,11 @@ public class IWindows {
         try {
             constructiv.compositionFirst();                //составы
             constructiv.joiningFirst();                    //соединения
-//            constructiv.fillingFirst();                    //заполнения
-//            constructiv.fittingFirst();                    //фурнитура
-//            constructiv.kitsFirst();                       //комплекты
-//            tariffic.calculate(elemList);                  //тарификация
-            rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
+            //constructiv.fillingFirst();                    //заполнения
+            //constructiv.fittingFirst();                    //фурнитура
+            //constructiv.kitsFirst();                       //комплекты
+            //tariffic.calculate(elemList);                  //тарификация
+            //rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
             //rootArea.drawWin(.3f, bufferSmallImg, false);  //small рис.
             //rootArea.resposeParamJson();                   //выходные пар.
         } catch (Exception e) {
