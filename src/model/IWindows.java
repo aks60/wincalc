@@ -100,10 +100,10 @@ public class IWindows {
         try {
             constructiv.compositionFirst();                //составы
             constructiv.joiningFirst();                    //соединения
-            //constructiv.fillingFirst();                    //заполнения
-            //constructiv.fittingFirst();                    //фурнитура
-            //constructiv.kitsFirst();                       //комплекты
-            //tariffic.calculate(elemList);                  //тарификация
+            constructiv.fillingFirst();                    //заполнения
+            constructiv.fittingFirst();                    //фурнитура
+            constructiv.kitsFirst();                       //комплекты
+            tariffic.calculate(elemList);                  //тарификация
             //rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
             //rootArea.drawWin(.3f, bufferSmallImg, false);  //small рис.
             //rootArea.resposeParamJson();                   //выходные пар.
@@ -114,12 +114,12 @@ public class IWindows {
         //Тестирование
         if (production == false) {
             //Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            //model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
+            //Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
+            model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
             //System.out.println(productJson); //вывод на консоль json
             //CalcBase.test_param(ParamSpecific.paramSum); //тестирование парам. спецификации
             //Main.print_joining(hmJoinElem); //соединения на консоль
-            hmJoinElem.entrySet().forEach(it -> System.out.println("id=" + it.getValue().id + "  JOIN=" + it.getValue().varJoin   + "  POINT:" + it.getKey() + " (" + it.getValue().joinElement1.specificationRec.artikl + ":" + it.getValue().joinElement2.specificationRec.artikl + ")")); 
+            //hmJoinElem.entrySet().forEach(it -> System.out.println("id=" + it.getValue().id + "  JOIN=" + it.getValue().varJoin   + "  POINT:" + it.getKey() + " (" + it.getValue().joinElement1.specificationRec.artikl + ":" + it.getValue().joinElement2.specificationRec.artikl + ")")); 
             
             
             //elemList.stream().forEach(el -> System.out.println(el));
