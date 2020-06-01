@@ -351,7 +351,7 @@ public class CalcConstructiv extends CalcBase {
      * Заполнения
      */
     public void fillingFirst() {
-        for (paramSpecific.pass = 1; paramSpecific.pass < 4; paramSpecific.pass++) {
+        //for (paramSpecific.pass = 1; paramSpecific.pass < 4; paramSpecific.pass++) {
 
             String artiklSysProf = null;
             ArrayList<Sysproa> sysproaList = Sysproa.find(constr, nuni);
@@ -381,12 +381,13 @@ public class CalcConstructiv extends CalcBase {
 
                             //artiklTech = Artikls.get(constr, glasproRec.anumb, false);
                             elemGlass.getHmFieldVal().put("GZAZO", String.valueOf(glasgrpRec.gzazo));
+                            paramSpecific.pass = 2;
                             fillingSecond(elemGlass, glasgrpRec);
                         }
                     }
                 }
             }
-        }
+        //}
     }
 
     /**
