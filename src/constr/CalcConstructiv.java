@@ -381,11 +381,6 @@ public class CalcConstructiv extends CalcBase {
 
                             //artiklTech = Artikls.get(constr, glasproRec.anumb, false);
                             elemGlass.getHmFieldVal().put("GZAZO", String.valueOf(glasgrpRec.gzazo));
-                            paramSpecific.pass = 1;
-                            fillingSecond(elemGlass, glasgrpRec);
-                            paramSpecific.pass = 2;
-                            fillingSecond(elemGlass, glasgrpRec);
-                            paramSpecific.pass = 3;
                             fillingSecond(elemGlass, glasgrpRec);
                         }
                     }
