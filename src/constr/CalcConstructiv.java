@@ -65,7 +65,7 @@ public class CalcConstructiv extends CalcBase {
                 for (Furnlen furnlenRec : furnlenList) {
 
                     ArrayList<ITParam> parfurlList = Parfurl.find(constr, furnlenRec.fincr);
-                    out = paramVariant.checkParfurl(fullStvorka, parfurlList); //параметры вариантов
+                    out = paramVariant.checkParfurl(fullStvorka, parfurlList); //ФИЛЬТР вариантов
                     if (out == false) break;
                 }
                 if (out == false) continue;
@@ -80,18 +80,21 @@ public class CalcConstructiv extends CalcBase {
      */
     protected void fittingMidle(AreaStvorka fullStvorka, Furnlst furnlstRec, int count) {
 
-        ArrayList<Furnspc> furnspcList = Furnspc.find(constr, furnlstRec.funic);
+        ArrayList<Furnspc> furnspcList = Furnspc.find(constr, furnlstRec.funic); //Из строки фурнитуры получим список детализации
+        //Цыкл по спецификации фурн.
         for (Furnspc furnspcRec : furnspcList) {
 
             if (furnspcRec.fleve == 1) {
                 boolean ret1 = fittingSecond(fullStvorka, furnspcRec, count);
                 if (ret1 == true) {
 
+                    //Цыкл по зависимой спецификации
                     for (Furnspc furnspcRec2 : furnspcList) {
                         if (furnspcRec2.fleve == 2 && furnspcRec.fincb == furnspcRec2.fincs) {
                             boolean ret2 = fittingSecond(fullStvorka, furnspcRec2, count);
                             if (ret2 == true) {
 
+                                //Цыкл по вложенной спецификации
                                 for (Furnspc furnspcRec3 : furnspcList) {
                                     if (furnspcRec3.fleve == 3 && furnspcRec2.fincb == furnspcRec3.fincs) {
                                         boolean ret3 = fittingSecond(fullStvorka, furnspcRec3, count);
@@ -108,7 +111,7 @@ public class CalcConstructiv extends CalcBase {
     protected boolean fittingSecond(AreaStvorka elStvorka, Furnspc furnspcRec, int count) {
 
         HashMap<Integer, String> hmParam = new HashMap(); //тут накапливаются параметры element и specific
-        //подбор текстуры ручки
+        //Подбор текстуры ручки
         if (furnspcRec.anumb.equals("НАБОР") == false) {
             Artikls artiklRec = Artikls.get(constr, furnspcRec.anumb, false);
             if (artiklRec != null && TypeArtikl.STVORKA_HANDL.isType(artiklRec)) {
@@ -126,6 +129,7 @@ public class CalcConstructiv extends CalcBase {
             }
         }
         ArrayList<Furnles> furnlesList = Furnles.find(constr, furnspcRec.fincb);
+        
         //Цикл по ограничению сторон фурнитуры
         for (Furnles furnlesRec : furnlesList) {
 
@@ -148,9 +152,8 @@ public class CalcConstructiv extends CalcBase {
             if (furnlesRec.lmaxl < width || (furnlesRec.lminl > width)) return false;
 
         }
-        //Фильтр параметров
         ArrayList<ITParam> parfursList = Parfurs.find(constr, furnspcRec.fincb);
-        if (paramSpecific.checkParfurs(hmParam, elStvorka, parfursList) == false) return false; //параметры спецификаций
+        if (paramSpecific.checkParfurs(hmParam, elStvorka, parfursList) == false) return false; //ФИЛЬТР спецификаций
 
         //Наборы
         if ("НАБОР".equals(furnspcRec.anumb)) {

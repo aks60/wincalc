@@ -101,7 +101,7 @@ public class IWindows {
             constructiv.compositionFirst();                //составы
             constructiv.joiningFirst();                    //соединения
             constructiv.fillingFirst();                    //заполнения
-//            constructiv.fittingFirst();                    //фурнитура
+            constructiv.fittingFirst();                    //фурнитура
 //            constructiv.kitsFirst();                       //комплекты
 //            tariffic.calculate(elemList);                  //тарификация
             //rootArea.drawWin(1f, bufferFullImg, true);     //full рис.
