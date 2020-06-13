@@ -10,14 +10,14 @@ public class Test {
      */
     public static void main(String[] args) {
         try {
-            String _case = "min";            
+            String _case = "dll";            
             IWindows.production = false;
             IWindows iwin = new IWindows(Constructive.getConstructive((short) 177));
             if (_case.equals("con")) {                
                 Constructive.getConstructive((short) 177);
                 
             } else if (_case.equals("dll")) {
-                iwin.create(Area.test(601001));
+                iwin.create(Area.test(601003));
                 System.out.println();
                 
             } else {

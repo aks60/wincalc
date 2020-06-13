@@ -259,11 +259,11 @@ public class Main extends javax.swing.JFrame {
         System.out.println("BEGIN_JOIN");
         for (Map.Entry<String, ElemJoinig> entry : hmJoinElem.entrySet()) {
             System.out.println("id=" + entry.getValue().id
-                    + " JOIN=" + entry.getValue().varJoin + "  POINT:" + entry.getKey() + ", "
-                    + getSId("LEFT", entry.getValue().elemJoinLeft) + " , "
-                    + getSId("RIGHT", entry.getValue().elemJoinRight) + ", "
-                    + getSId("TOOP", entry.getValue().elemJoinTop) + ", "
-                    + getSId("BOTTOM", entry.getValue().elemJoinBottom)); // + ", " +
+                    + " JOIN=" + entry.getValue().varJoin + "  POINT:" + entry.getKey()  + ", - " + entry.getValue().name);
+                    //+ getSId("LEFT", entry.getValue().elemJoinLeft) + " , "
+                    //+ getSId("RIGHT", entry.getValue().elemJoinRight) + ", "
+                    //+ getSId("TOOP", entry.getValue().elemJoinTop) + ", "
+                    //+ getSId("BOTTOM", entry.getValue().elemJoinBottom)); // + ", " +
             //"art1:" + entry.getValue().joinElement1.articlesRec.anumb + ", " +
             //"art2:" + entry.getValue().joinElement2.articlesRec.anumb);
         }

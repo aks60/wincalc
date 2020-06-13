@@ -147,8 +147,9 @@ public class AreaStvorka extends AreaSimple {
     @Override
     public void passJoinRama() {
 
-        //Угловое соединение левое верхнее
+        
         ElemJoinig elemJoin1 = new ElemJoinig(getConst());
+        elemJoin1.name = "Угловое соединение левое верхнее";
         elemJoin1.elemJoinRight = hmElemFrame.get(LayoutArea.TOP);
         elemJoin1.elemJoinBottom = hmElemFrame.get(LayoutArea.LEFT);
         elemJoin1.joinElement1 = hmElemFrame.get(LayoutArea.LEFT);
@@ -158,8 +159,9 @@ public class AreaStvorka extends AreaSimple {
         elemJoin1.varJoin = VariantJoin.VAR2;
         getHmJoinElem().put(String.valueOf(x1) + ":" + String.valueOf(y1), elemJoin1);
 
-        //Угловое соединение правое верхнее
+        
         ElemJoinig elemJoin2 = new ElemJoinig(getConst());
+        elemJoin2.name = "Угловое соединение правое верхнее";
         elemJoin2.elemJoinLeft = hmElemFrame.get(LayoutArea.TOP);
         elemJoin2.elemJoinBottom = hmElemFrame.get(LayoutArea.RIGHT);
         elemJoin2.joinElement1 = hmElemFrame.get(LayoutArea.RIGHT);
@@ -169,8 +171,9 @@ public class AreaStvorka extends AreaSimple {
         elemJoin2.varJoin = VariantJoin.VAR2;
         getHmJoinElem().put(String.valueOf(x2) + ":" + String.valueOf(y1), elemJoin2);
 
-        //Угловое соединение правое нижнее
+        
         ElemJoinig elemJoin3 = new ElemJoinig(getConst());
+        elemJoin3.name = "Угловое соединение правое нижнее";
         elemJoin3.elemJoinTop = hmElemFrame.get(LayoutArea.RIGHT);
         elemJoin3.elemJoinLeft = hmElemFrame.get(LayoutArea.BOTTOM);
         elemJoin3.joinElement1 = hmElemFrame.get(LayoutArea.RIGHT);
@@ -180,8 +183,9 @@ public class AreaStvorka extends AreaSimple {
         elemJoin3.varJoin = VariantJoin.VAR2;
         getHmJoinElem().put(String.valueOf(x2) + ":" + String.valueOf(y2), elemJoin3);
 
-        //Угловое соединение левое нижнее
+        
         ElemJoinig elemJoin4 = new ElemJoinig(getConst());
+        elemJoin4.name = "Угловое соединение левое нижнее";
         elemJoin4.elemJoinRight = hmElemFrame.get(LayoutArea.BOTTOM);
         elemJoin4.elemJoinTop = hmElemFrame.get(LayoutArea.LEFT);
         elemJoin4.joinElement1 = hmElemFrame.get(LayoutArea.LEFT);
@@ -191,8 +195,9 @@ public class AreaStvorka extends AreaSimple {
         elemJoin4.varJoin = VariantJoin.VAR2;
         getHmJoinElem().put(String.valueOf(x1) + ":" + String.valueOf(y2), elemJoin4);
 
-        //Прилигающее верхнее
+        
         ElemJoinig elemJoin_top = new ElemJoinig(getConst());
+        elemJoin_top.name = "Прилигающее верхнее";
         elemJoin_top.id = genId();
         elemJoin_top.elemJoinTop = hmElemFrame.get(LayoutArea.TOP);
         elemJoin_top.elemJoinBottom = hmElemFrame.get(LayoutArea.TOP);
@@ -203,8 +208,9 @@ public class AreaStvorka extends AreaSimple {
         elemJoin_top.varJoin = VariantJoin.VAR1;
         iwin.getHmJoinElem().put(String.valueOf(x1 + width / 2) + ":" + String.valueOf(y1 + 1), elemJoin_top);
 
-        //Прилигающее нижнее
+        
         ElemJoinig elemJoin_bottom = new ElemJoinig(getConst());
+        elemJoin_bottom.name = "Прилигающее нижнее";
         elemJoin_bottom.id = genId();
         elemJoin_bottom.elemJoinTop = hmElemFrame.get(LayoutArea.BOTTOM);
         elemJoin_bottom.elemJoinBottom = hmElemFrame.get(LayoutArea.BOTTOM);
@@ -215,8 +221,9 @@ public class AreaStvorka extends AreaSimple {
         elemJoin_bottom.varJoin = VariantJoin.VAR1;
         getHmJoinElem().put(String.valueOf(x1 + width / 2) + ":" + String.valueOf(y2 - 1), elemJoin_bottom);
 
-        //Прилигающее левое
+        
         ElemJoinig elemJoin_left = new ElemJoinig(getConst());
+        elemJoin_left.name = "Прилигающее левое";
         elemJoin_left.id = genId();
         elemJoin_left.elemJoinLeft = hmElemFrame.get(LayoutArea.LEFT);
         elemJoin_left.elemJoinRight = hmElemFrame.get(LayoutArea.LEFT);
@@ -227,8 +234,9 @@ public class AreaStvorka extends AreaSimple {
         elemJoin_left.varJoin = VariantJoin.VAR1;
         getHmJoinElem().put(String.valueOf(x1 + 1) + ":" + String.valueOf(y1 + height / 2), elemJoin_left);
 
-        //Прилигающее правое
+        
         ElemJoinig elemJoin_right = new ElemJoinig(getConst());
+        elemJoin_right.name = "Прилигающее правое";
         elemJoin_right.id = genId();
         elemJoin_right.elemJoinLeft = hmElemFrame.get(LayoutArea.RIGHT);
         elemJoin_right.elemJoinRight = hmElemFrame.get(LayoutArea.RIGHT);
