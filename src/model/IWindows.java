@@ -98,8 +98,8 @@ public class IWindows {
 
         //Калькуляция
         try {            
-            constructiv.joiningFirst();                    //соединения
             constructiv.compositionFirst();                //составы
+            constructiv.joiningFirst();                    //соединения
             constructiv.fillingFirst();                    //заполнения
             constructiv.fittingFirst();                    //фурнитура
             constructiv.kitsFirst();                       //комплекты
