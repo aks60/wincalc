@@ -132,10 +132,10 @@ public class Specification {
 
     protected void setAnglCut() {
 
-        if (TypeArtikl.FITTING.isType(articlesRec) ||
-                TypeArtikl.KONZEVPROF.isType(articlesRec) ||
-                TypeArtikl.MONTPROF.isType(articlesRec) ||
-                TypeArtikl.FIKSPROF.isType(articlesRec)) {
+        if (TypeArtikl.FITTING.isType(articlesRec)
+                || TypeArtikl.KONZEVPROF.isType(articlesRec)
+                || TypeArtikl.MONTPROF.isType(articlesRec)
+                || TypeArtikl.FIKSPROF.isType(articlesRec)) {
             anglCut2 = 90;
             anglCut1 = 90;
 
@@ -151,7 +151,9 @@ public class Specification {
 
     public String getHmParam(Object def, int... p) {
 
-        if (hmParam == null) System.out.println("ОШИБКА getHmParam() hmParamJson = null");
+        if (hmParam == null) {
+            System.out.println("ОШИБКА getHmParam() hmParamJson = null");
+        }
 
         for (int index = 0; index < p.length; ++index) {
             int key = p[index];
@@ -169,8 +171,8 @@ public class Specification {
 
         return (id == spec.id && layout.equals(spec.layout) && artikl.equals(spec.artikl) && name.equals(spec.name)
                 && colorBase == spec.colorBase && colorInternal == spec.colorInternal && colorExternal == spec.colorExternal
-                && width == spec.width && height == spec.height && anglCut2 == spec.anglCut2 && anglCut1 == spec.anglCut1 &&
-                quantity == spec.quantity && unit == spec.unit && wastePrc == spec.wastePrc && quantity2 == spec.quantity2
+                && width == spec.width && height == spec.height && anglCut2 == spec.anglCut2 && anglCut1 == spec.anglCut1
+                && quantity == spec.quantity && unit == spec.unit && wastePrc == spec.wastePrc && quantity2 == spec.quantity2
                 && inPrice == spec.inPrice && outPrice == spec.outPrice && discount == spec.discount);
     }
 
@@ -178,8 +180,8 @@ public class Specification {
     public String toString() {
         Formatter f = new Formatter();
         return "Изделие=" + id + ", Расп...=" + layout + ", Артикул=" + artikl + ", Наименование=" + name + ", Текстура=" + colorBase + ", Внутренняя=" + colorInternal
-                + ", Внешняя=" + colorExternal + ", Длина. мм=" + f.format("%.1f", width) + ", Ширина. мм=" + f.format("%.1f", height) + ", Угол1=" + String.format("%.2f", anglCut2) +
-                ", Угол2=" + String.format("%.2f", anglCut1) + ", Кол.шт=" + count + ", Кол.без.отх=" + quantity + ", Отход=" + wastePrc + ", Кол.с.отх=" + quantity2
+                + ", Внешняя=" + colorExternal + ", Длина. мм=" + f.format("%.1f", width) + ", Ширина. мм=" + f.format("%.1f", height) + ", Угол1=" + String.format("%.2f", anglCut2)
+                + ", Угол2=" + String.format("%.2f", anglCut1) + ", Кол.шт=" + count + ", Кол.без.отх=" + quantity + ", Отход=" + wastePrc + ", Кол.с.отх=" + quantity2
                 + ", Собест.за.ед" + inPrice + ", Собест.с.отх" + outPrice + ", Скидка=" + discount;
     }
 
@@ -190,8 +192,8 @@ public class Specification {
             File file = new File("C:\\Okna\\wincalc\\src\\resource\\file\\Specification.csv.");
             writer = new BufferedWriter(new FileWriter(file));
 
-            writer.write(new String(("TEST Изделие, Элемент, Артикул, Наименование, Текстура, Внутренняя, Внешняя, Длина. мм, " +
-                    "Ширина. мм, Угол1, Угол2, Количество, Погонаж, Ед.изм, Ед.изм, Скидка, Скидка").getBytes("windows-1251"), "UTF-8"));
+            writer.write(new String(("TEST Изделие, Элемент, Артикул, Наименование, Текстура, Внутренняя, Внешняя, Длина. мм, "
+                    + "Ширина. мм, Угол1, Угол2, Количество, Погонаж, Ед.изм, Ед.изм, Скидка, Скидка").getBytes("windows-1251"), "UTF-8"));
             for (Specification spc : spcList) {
 
                 String str = spc.id + "," + spc.layout + "," + spc.artikl + "," + spc.name + "," + spc.colorBase + "," + spc.colorInternal + "," + spc.colorExternal
@@ -218,41 +220,42 @@ public class Specification {
 
         //String path = "C:\\Java\\specific_compare.txt";
         //try (PrintStream printStream = new PrintStream(path, "windows-1251")) {
-            int npp = 0;
-            String format = "%-6s%-46s%-32s%-32s%-32s%-32s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s" +
-                    "%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s %n";
-            Object str[] = {"Code", "Name", "Art", "BaseColor", "InsideColor", "OutsideColor", "Count", "Quantity",
-                    "UM", "InPrice", "CostPrice", "OutPrice", "OutTotal", "Width", "Height", "Weight",
-                    "Angle", "ComplType", "ElemID", "ElemType", "ObjectID", "ObjectType", "AreaID", "AreaType",
-                    "AccessoryID", "PriceGRP", "PrintGroup", "CutAngle1", "CutAngle2", "Composite", "Усл.окна"};
-            String str3 = new String(("Спецификация (" + specList.size() + " строк):").getBytes());
-            //printStream.println(str3);
-            //printStream.printf(format, str);
-            System.out.printf(format, str);
-            for (Specification s : specList) {
+        int npp = 0;
+        String format = "%-6s%-46s%-32s%-32s%-32s%-32s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s"
+                + "%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s%-16s %n";
+        Object str[] = {"Code", "Name", "Art", "BaseColor", "InsideColor", "OutsideColor", "Count", "Quantity",
+            "UM", "InPrice", "CostPrice", "OutPrice", "OutTotal", "Width", "Height", "Weight",
+            "Angle", "ComplType", "ElemID", "ElemType", "ObjectID", "ObjectType", "AreaID", "AreaType",
+            "AccessoryID", "PriceGRP", "PrintGroup", "CutAngle1", "CutAngle2", "Composite", "Усл.окна"};
+        String str3 = new String(("Спецификация (" + specList.size() + " строк):").getBytes());
+        //printStream.println(str3);
+        //printStream.printf(format, str);
+        System.out.printf(format, str);
+        for (Specification s : specList) {
 
-                Object str2[] = {String.valueOf(++npp), s.name, s.artikl, Colslst.get2(c, s.colorBase).cname,
-                        Colslst.get2(c, s.colorInternal).cname, Colslst.get2(c, s.colorExternal).cname, String.valueOf(s.count), String.valueOf(s.quantity),
-                        MeasUnit.getName(s.unit), "0", String.valueOf(s.inPrice), String.valueOf(s.outPrice), String.valueOf(s.inCost),
-                        String.valueOf(s.width), String.valueOf(s.height), "0", "0", "0", String.valueOf(s.id), "0", "0", "0", "0", "0",
-                        "0", "0", "0", String.valueOf(s.anglCut2), String.valueOf(s.anglCut1), "0", "0"};
-                //printStream.printf(format, str2);
-                System.out.printf(format, str2);
-            }
-            float totalVal = 0;
-            for (Specification s : specList) {
-                totalVal = totalVal + s.outCost;
-            }
-            String str4 = new String(("Суммарная цена = " + totalVal).getBytes());
-            //printStream.printf("%-120s", str4);
-            System.out.println(str4);
+            Object str2[] = {String.valueOf(++npp), s.name, s.artikl, Colslst.get2(c, s.colorBase).cname,
+                Colslst.get2(c, s.colorInternal).cname, Colslst.get2(c, s.colorExternal).cname, String.valueOf(s.count), String.valueOf(s.quantity),
+                MeasUnit.getName(s.unit), "0", String.valueOf(s.inPrice), String.valueOf(s.outPrice), String.valueOf(s.inCost),
+                String.valueOf(s.width), String.valueOf(s.height), "0", "0", "0", String.valueOf(s.id), "0", "0", "0", "0", "0",
+                "0", "0", "0", String.valueOf(s.anglCut2), String.valueOf(s.anglCut1), "0", "0"};
+            //printStream.printf(format, str2);
+            System.out.printf(format, str2);
+        }
+        float totalVal = 0;
+        for (Specification s : specList) {
+            totalVal = totalVal + s.outCost;
+        }
+        String str4 = new String(("Суммарная цена = " + totalVal).getBytes());
+        //printStream.printf("%-120s", str4);
+        System.out.println(str4);
 
         //} catch (IOException ex) {    System.out.println("Ошибка Specification.write_txt() " + ex);   }
     }
 
     public static void write_txt2(Constructive c, ArrayList<Specification> specList) {
 
-        Specification.sort(specList);
+        Collections.sort(specList, (o1, o2) -> (o1.layout.subSequence(0, 3) + o1.name).compareTo(o2.layout.subSequence(0, 3) + o2.name));
+        //Specification.sort(specList);
         int npp = 0;
         String format = "%-6s%-16s%-46s%-26s%-12s%-12s%-12s";
         Object str[] = {"Code", "Section", "Name", "Art", "areaId", "elemId", "owner"};
