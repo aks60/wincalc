@@ -60,6 +60,8 @@ public class ElemImpost extends ElemBase {
         } else if (LayoutArea.HORIZONTAL.equals(owner.getLayout())) { //слева направо
             sysproaRec = Sysproa.find(getConst(), owner.iwin.nuni, TypeProfile.IMPOST, ProfileSide.Vert);
         }
+        specificationRec.layout = (LayoutArea.HORIZONTAL == owner.getLayout()) ? LayoutArea.VERTICAL.name : LayoutArea.HORIZONTAL.name;
+        specificationRec.layout = "СОСТ." + specificationRec.layout.substring(0, 1);
         articlesRec = Artikls.get(getConst(), sysproaRec.anumb, true);
         specificationRec.setArticlRec(articlesRec);
     }
@@ -67,7 +69,6 @@ public class ElemImpost extends ElemBase {
     public void setSpecifElement(Sysproa sysproaRec) {
 
         indexUniq(specificationRec);
-        specificationRec.layout = (LayoutArea.HORIZONTAL == owner.getLayout()) ? LayoutArea.VERTICAL.name : LayoutArea.HORIZONTAL.name;
         specificationRec.setArticlRec(Artikls.get(getConst(), sysproaRec.anumb, false));
         specificationRec.colorBase = colorBase;
         specificationRec.colorInternal = colorInternal;
@@ -128,7 +129,7 @@ public class ElemImpost extends ElemBase {
 
             //Теперь армирование
         } else if (TypeArtikl.ARMIROVANIE.value2 == specifArtikl.atypp && specifArtikl.atypm == 1) {
-            specif.layout = side.name;
+            specif.layout = "СОСТ." + getLayout().name.substring(0, 1);
 
             //if (LayoutArea.HORIZONTAL == side) specif.width = owner.x2 - owner.x1;
             //else if(LayoutArea.VERTICAL == side) specif.width = owner.y2 - owner.y1;

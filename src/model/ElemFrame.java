@@ -62,6 +62,7 @@ public class ElemFrame extends ElemBase {
 
     public void initСonstructiv() {
 
+        specificationRec.layout = "СОСТ." + getLayout().name.substring(0, 1);
         sysproaRec = Sysproa.find(getConst(), owner.iwin.nuni, getTypeProfile());
         articlesRec = Artikls.get(getConst(), sysproaRec.anumb, true);
         specificationRec.setArticlRec(articlesRec);
@@ -69,7 +70,6 @@ public class ElemFrame extends ElemBase {
 
     public void setSpecifElement(Sysproa sysproaRec) {
 
-        specificationRec.layout = side.name;
         float ssizp = getRoot().iwin.syssizeRec.ssizp;
         Artikls articlesRec = Artikls.get(getConst(), sysproaRec.anumb, false);
         specificationRec.setArticlRec(articlesRec);
@@ -126,7 +126,7 @@ public class ElemFrame extends ElemBase {
 
             //Теперь армирование
         } else if (TypeArtikl.ARMIROVANIE.isType(cpecifArtikls)) {
-            specif.layout = side.name;
+            specif.layout = "СОСТ." + getLayout().name.substring(0, 1);
 
             if (LayoutArea.TOP == side || LayoutArea.BOTTOM == side) {
                 specif.width = x2 - x1;

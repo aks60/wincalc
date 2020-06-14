@@ -61,6 +61,7 @@ public class ElemGlass extends ElemBase {
             //articlesRec.atech = getRoot().getHmElemFrame().get(LayoutArea.LEFT).getArticlesRec().atech; //а может так!!!
             articlesRec.atech = getRoot().getIwin().getArticlesRec().atech; //TODO наследование дордома Профстроя
         }
+        specificationRec.layout = "ЗАП";
         //Цвет стекла
         Artsvst artsvstRec = Artsvst.get2(getConst(), articlesRec.anumb);
         colorBase = artsvstRec.clcod;
@@ -98,7 +99,6 @@ public class ElemGlass extends ElemBase {
             specificationRec.width = width;
 
             specificationRec.id = id;
-            specificationRec.layout = "Арочное";
             specificationRec.setArticlRec(articlesRec);
             specificationRec.colorBase = colorBase;
             specificationRec.colorInternal = colorInternal;
@@ -123,7 +123,6 @@ public class ElemGlass extends ElemBase {
             specificationRec.width = width;
             specificationRec.height = height;
             specificationRec.id = id;
-            specificationRec.layout = "Прямоугольное";
             specificationRec.setArticlRec(articlesRec);
             specificationRec.colorBase = colorBase;
             specificationRec.colorInternal = colorInternal;
