@@ -14,8 +14,6 @@ public class CalcConstructiv extends CalcBase {
     private ParamVariant paramVariant = null;
     private ParamSpecific paramSpecific = null;
 
-    public ArrayList<Furnlst> furnlstREC = new ArrayList();
-    
     public String sideCheck = ""; //TODO Эту переменную надо вынести в map параметров!!!
 
     public CalcConstructiv(AreaSimple root) {
@@ -72,7 +70,6 @@ public class CalcConstructiv extends CalcBase {
                 }
                 if (out == false) continue;
 
-                furnlstREC.add(furnlstRec);
                 fittingMidle(fullStvorka, furnlstRec, 1);
             }
         }
