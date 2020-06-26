@@ -26,7 +26,7 @@ public class Connlst {
         anum1 = rs.getString("ANUM1");
         anum2 = rs.getString("ANUM2");
         cconn = rs.getInt("CCONN");
-        String cname = rs.getString("CNAME");
+        cname = rs.getString("CNAME");
         cvarf = rs.getShort("CVARF");
         cequv = rs.getString("CEQUV");
     }

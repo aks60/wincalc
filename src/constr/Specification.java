@@ -255,7 +255,6 @@ public class Specification {
     public static void write_txt2(Constructive c, ArrayList<Specification> specList) {
 
         Collections.sort(specList, (o1, o2) -> (o1.layout.subSequence(0, 3) + o1.name).compareTo(o2.layout.subSequence(0, 3) + o2.name));
-        //Specification.sort(specList);
         int npp = 0;
         String format = "%-6s%-16s%-46s%-26s%-12s%-12s%-12s";
         Object str[] = {"Code", "Section", "Name", "Art", "areaId", "elemId", "owner"};

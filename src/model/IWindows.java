@@ -113,6 +113,7 @@ public class IWindows {
 
         //Тестирование
         if (production == false) {
+            System.out.println("okno=" + prj);
             //Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
             Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
             //model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
@@ -128,7 +129,7 @@ public class IWindows {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String productParamsJson = Area.test(604001); // тут удобно редактировать тестовый проект //////////////////
+    public String productParamsJson = Area.test(601008); // тут удобно редактировать тестовый проект //////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
