@@ -66,7 +66,6 @@ public class ElemFrame extends ElemBase {
         sysproaRec = Sysproa.find(getConst(), owner.iwin.nuni, getTypeProfile());
         articlesRec = Artikls.get(getConst(), sysproaRec.anumb, true);
         specificationRec.setArticlRec(articlesRec);
-        articlesRec = Artikls.get(getConst(), sysproaRec.anumb, false);
     }
 
     public void setSpecifElement(Sysproa sysproaRec) {
