@@ -495,7 +495,7 @@ public class Area extends Element {
             area5.add(new Element("12", TypeElem.IMPOST));
             Area area7 = (Area) area5.add(new Area("13", LayoutArea.VERTICAL, TypeElem.AREA, 850));
 
-            Area area8 = (Area) area6.add(new Area("14", LayoutArea.FULL, TypeElem.FULLSTVORKA, "{'typeOpen':4, 'funic':20}"));
+            Area area8 = (Area) area6.add(new Area("14", LayoutArea.FULL, TypeElem.FULLSTVORKA, "{'typeOpen':3, 'funic':20}"));
             rootArea.add(new Element("15", TypeElem.GLASS));
             area4.add(new Element("16", TypeElem.GLASS));
             area7.add(new Element("17", TypeElem.GLASS));

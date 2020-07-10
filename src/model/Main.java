@@ -56,7 +56,7 @@ public class Main extends javax.swing.JFrame {
                         specList.addAll(elemBase.getSpecificationList());
                     }
                     int row = 0;
-                    Specification.sort(specList);
+                    Collections.sort(specList, (o1, o2) -> (o1.layout.subSequence(0, 3) + o1.name).compareTo(o2.layout.subSequence(0, 3) + o2.name));
                     float totalJAR = 0;
                     for (Specification s : specList) {
                         Object val[] = {++row, s.id, s.layout, s.artikl, s.name, Colslst.get2(constructive, s.colorBase).cname,
