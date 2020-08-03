@@ -160,7 +160,8 @@ public class ElemFrame extends ElemBase {
             str = str.replace(",", ".");
             Float koef = Float.valueOf(str);
             float ssizf = getRoot().getIwin().syssizeRec.ssizf;
-            specif.width = (getWidth() - ssizf) + (getWidth() - ssizf) * koef;
+            Object obj = getWidth();
+            specif.width = (getWidth() - ssizf) * 2 * koef;
 
             //Соединитель
         } else if (TypeArtikl.SOEDINITEL.isType(cpecifArtikls) == true) {

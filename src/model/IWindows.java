@@ -54,7 +54,7 @@ public class IWindows {
     }
     
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String productParamsJson = Area.test(604005); // тут удобно редактировать тестовый проект //////////////////
+    public String productParamsJson = Area.test(604008); // тут удобно редактировать тестовый проект //////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 
     /**
@@ -119,8 +119,8 @@ public class IWindows {
         if (production == false) {
             System.out.println("okno=" + prj);
             //Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            //model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
+            //Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
+            model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
             //System.out.println(productJson); //вывод на консоль json
             //CalcBase.test_param(ParamSpecific.paramSum); //тестирование парам. спецификации
             //Main.print_joining(hmJoinElem); //соединения на консоль

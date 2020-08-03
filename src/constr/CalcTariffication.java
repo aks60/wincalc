@@ -205,8 +205,8 @@ public class CalcTariffication extends CalcBase {
 
             } else {
 
-                Object ooo = CanBeUsedAsBaseColor(artsvst);
-                Object ooo2 = IsArtTariffAppliesForColor(artsvst, baseColorRec);
+                //Object ooo = CanBeUsedAsBaseColor(artsvst);
+                //Object ooo2 = IsArtTariffAppliesForColor(artsvst, baseColorRec);
 
                 if (CanBeUsedAsBaseColor(artsvst) && IsArtTariffAppliesForColor(artsvst, baseColorRec)) { //подбираем тариф основной текстуры
                     Grupcol grupcolRec = Grupcol.get(constr, baseColorRec.cgrup);

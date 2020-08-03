@@ -114,7 +114,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane.setViewportView(jTable);
         panSpecif.add(jScrollPane, java.awt.BorderLayout.CENTER);
 
-        int col_width[] = {30, 30, 80, 140, 250, 80, 80, 80, 60, 60, 50, 50, 40, 70, 70, 54, 60, 70, 70, 62, 50, 70};
+        int col_width[] = {34, 30, 80, 140, 250, 80, 80, 80, 60, 60, 50, 50, 40, 70, 70, 54, 60, 70, 70, 62, 50, 70};
         for (int index = 0; index < col_width.length; index++) {
             jTable.getColumnModel().getColumn(index).setPreferredWidth(col_width[index]);
         }
