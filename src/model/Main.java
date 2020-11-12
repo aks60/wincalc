@@ -231,7 +231,7 @@ public class Main extends javax.swing.JFrame {
                     jarTotal = jarTotal + value3;
                 }
             } else {
-                /* for (Map.Entry<String, Float> entry : hmDll.entrySet()) {
+                 for (Map.Entry<String, Float> entry : hmDll.entrySet()) {
                     String key = entry.getKey();
                     Float val1 = entry.getValue();
                     Float val2 = (hmJar.get(key) == null) ? 0.f : hmJar.get(key);
@@ -243,7 +243,7 @@ public class Main extends javax.swing.JFrame {
                     String key = entry.getKey();
                     Float value3 = entry.getValue();
                     jarTotal = jarTotal + value3;
-                }*/
+                }
             }
             System.out.printf("%-18s%-18s%-18s%-12s", "Prj=" + prj, "iwin=" + String.format("%.2f", iwinTotal), "jar="
                     + String.format("%.2f", jarTotal), "dx=" + String.format("%.2f", Math.abs(iwinTotal - jarTotal)));

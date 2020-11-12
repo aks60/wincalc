@@ -120,7 +120,7 @@ public class IWindows {
             System.out.println("okno=" + prj);
             //Specification.write_txt(constr, rootArea.specificList()); //вывод на тестирование в DLL
             //Specification.write_txt2(constr, rootArea.specificList()); //вывод на тестирование в DLL
-            model.Main.compareIWin(rootArea.specificList(), prj, true); //сравнение спецификации с профстроем 
+            model.Main.compareIWin(rootArea.specificList(), prj, false); //сравнение спецификации с профстроем 
             //System.out.println(productJson); //вывод на консоль json
             //CalcBase.test_param(ParamSpecific.paramSum); //тестирование парам. спецификации
             //Main.print_joining(hmJoinElem); //соединения на консоль
