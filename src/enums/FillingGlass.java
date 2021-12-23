@@ -6,6 +6,7 @@ package enums;
  */
 public enum FillingGlass {
 
+    
     RECTANGL(1, "Прямоугольное"),
     NOT_RECTANGU(2, "Не прямоугольное"),
     ARCHED(3, "Арочное"),
