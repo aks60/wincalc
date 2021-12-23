@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.text.DecimalFormat;
 import java.util.*;
 
+//Главный класс
 public class Main extends javax.swing.JFrame {
 
     private javax.swing.JButton btnClose = new javax.swing.JButton();
